@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxx318rchuooe"]
+[gd_scene load_steps=7 format=3 uid="uid://dxx318rchuooe"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://q0mj6pni7aje" path="res://Scenes/world_environment.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://coac77qko23re" path="res://Scenes/house.tscn" id="3_wrm1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2poj3"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -27,9 +28,12 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 1.47562e-08, 0.499998, 0
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(8.16, 0, 0, 0, 0.9, 0, 0, 0, 11.8976, -0.5, 0, 0)
+transform = Transform3D(8.16, 0, 0, 0, 0.9, 0, 0, 0, 11.8976, -0.5, -1, 0)
 use_collision = true
 size = Vector3(2, 1, 1)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="H_House2" parent="." instance=ExtResource("3_wrm1d")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -22.8704, 2, 1)
