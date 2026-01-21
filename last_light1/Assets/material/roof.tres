@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://boy2vlbx1o8oj"]
+
+[ext_resource type="Texture2D" uid="uid://4ln3nr57dey1" path="res://Assets/Textures/old-galvanized-iron-roof.jpg" id="1_oibxv"]
+
+[resource]
+albedo_texture = ExtResource("1_oibxv")
+uv1_scale = Vector3(7.55, 7.55, 7.55)

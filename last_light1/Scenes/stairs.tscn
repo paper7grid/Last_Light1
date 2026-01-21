@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://myqls52h33ed"]
+[gd_scene load_steps=6 format=4 uid="uid://myqls52h33ed"]
+
+[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_aiuvb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k762u"]
 resource_name = "Material"
@@ -45,6 +47,7 @@ points = PackedVector3Array(1.01587, 0.380928, 0.380853, -0.997061, -1, -0.99706
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.71216, 0, 0, 0, 5.6387, 0, 0, 0, 8.4732, 0, 0, 0)
+material_override = ExtResource("1_aiuvb")
 mesh = SubResource("ArrayMesh_sn3d8")
 skeleton = NodePath("")
 
