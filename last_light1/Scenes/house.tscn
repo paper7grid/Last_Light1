@@ -234,6 +234,7 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="house_Meshes/Cube"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house_Meshes/Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_7p874")
 
 [node name="Cube_001" type="MeshInstance3D" parent="house_Meshes"]
