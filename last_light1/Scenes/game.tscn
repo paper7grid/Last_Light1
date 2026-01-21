@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://q0mj6pni7aje" path="res://Scenes/world_environment.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://coac77qko23re" path="res://Scenes/house.tscn" id="3_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://pskjm1o4y4w3" path="res://glb_models/stairs.glb" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://myqls52h33ed" path="res://Scenes/stairs.tscn" id="4_3dryh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2poj3"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -40,4 +40,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.427584, 4)
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -22.8704, 2, 1)
 
 [node name="stairs" parent="." instance=ExtResource("4_3dryh")]
-transform = Transform3D(-0.020632, 0.00636642, -0.501322, -0.0265861, 0.526224, 0.00712138, 0.507918, 0.0278029, -0.0199912, -20.1962, -2.52747, 6.9796)
+transform = Transform3D(-0.00363793, 0, -0.548656, 0, 0.521438, 0, 0.580605, 0, -0.00343775, -19.8133, -2.77852, 7.10457)
