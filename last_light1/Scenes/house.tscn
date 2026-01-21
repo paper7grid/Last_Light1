@@ -288,26 +288,28 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house_Meshes/Cube_013/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_xi0mm")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="Lights inside" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, 18)
 omni_range = 19.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, -9)
 omni_range = 19.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
 omni_range = 19.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
 omni_range = 19.0
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -4)
 omni_range = 12.0
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -22)
 omni_range = 9.0
