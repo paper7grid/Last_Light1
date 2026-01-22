@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=39 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://78eewrl6x66f" path="res://Scenes/tv.tscn" id="8_gau5j"]
 [ext_resource type="PackedScene" uid="uid://ej013qmci120" path="res://Scenes/vase.tscn" id="9_7ug6d"]
 [ext_resource type="Texture2D" uid="uid://ct8siw5gccclb" path="res://Assets/Textures/fabric-texture-background.jpg" id="10_lmwq5"]
+[ext_resource type="PackedScene" uid="uid://cbm4aeyosld5v" path="res://Scenes/mattress.tscn" id="11_x4svt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -238,6 +239,10 @@ albedo_texture = ExtResource("10_lmwq5")
 
 [sub_resource type="QuadMesh" id="QuadMesh_ttg8n"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmwq5"]
+albedo_color = Color(0.479624, 0, 0.106411, 1)
+albedo_texture = ExtResource("10_lmwq5")
+
 [node name="house" type="Node3D"]
 
 [node name="house_Meshes" type="Node3D" parent="."]
@@ -378,3 +383,16 @@ transform = Transform3D(2.16821, 0, 0, 0, 2.16821, 0, 0, 0, 2.16821, -8.86065, -
 transform = Transform3D(10.0428, 0, 0, 0, -6.94303e-07, 6.69146, 0, -15.8838, -2.92493e-07, 13.2085, -4.2389, 11.3244)
 material_override = SubResource("StandardMaterial3D_x4svt")
 mesh = SubResource("QuadMesh_ttg8n")
+
+[node name="Carpet2" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.96154, 0, 0, 0, -5.24748e-07, 5.05735, 0, -12.0048, -2.21064e-07, -9.55356, -4.2389, 17.667)
+material_override = SubResource("StandardMaterial3D_lmwq5")
+mesh = SubResource("QuadMesh_ttg8n")
+
+[node name="Carpet3" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.222, 0, 0, 0, -3.93993e-07, 4.71128, 0, -9.01351, -2.05937e-07, -13.09, -4.2389, -22.8258)
+material_override = SubResource("StandardMaterial3D_x4svt")
+mesh = SubResource("QuadMesh_ttg8n")
+
+[node name="mattress" parent="." instance=ExtResource("11_x4svt")]
+transform = Transform3D(4.4814, 0, 0, 0, 4.4814, 0, 0, 0, 4.4814, -13.1296, -4.29775, -24.2878)
