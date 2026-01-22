@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dk2tlkgit6gla"]
+[gd_scene load_steps=8 format=4 uid="uid://dk2tlkgit6gla"]
 
 [ext_resource type="Texture2D" uid="uid://cf0d8o6a36rjd" path="res://Assets/furniture assets/chair_chair128x128.png" id="1_63pu4"]
-[ext_resource type="Material" uid="uid://buh8djq1fb1ul" path="res://Assets/material/tablecov.tres" id="1_v85ls"]
+[ext_resource type="Texture2D" uid="uid://b4ynhxecuq38y" path="res://Assets/Textures/wooden-plank-textured-background-material.jpg" id="1_v85ls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c4dr"]
+albedo_texture = ExtResource("1_v85ls")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ar1p"]
 resource_name = "Chair"
@@ -49,7 +52,7 @@ points = PackedVector3Array(-0.192977, 1.03314, 0.26275, -0.242123, 0.237292, -0
 [node name="chair" type="Node3D"]
 
 [node name="Chair" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_v85ls")
+material_override = SubResource("StandardMaterial3D_4c4dr")
 mesh = SubResource("ArrayMesh_8p50w")
 skeleton = NodePath("")
 

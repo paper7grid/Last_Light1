@@ -50,4 +50,10 @@ transform = Transform3D(-0.00399614, 0, -0.242932, 0, 0.291039, 0, 0.637773, 0, 
 transform = Transform3D(-0.998826, 0, 0.0546597, 0, 1.49764, 0, -0.03111, 0, -1.75491, -31.0949, -0.171517, 4.42299)
 
 [node name="chair2" parent="." instance=ExtResource("5_wowpa")]
-transform = Transform3D(-0.305161, 0, 2.09491, 0, 2.14381, 0, -0.829581, 0, -0.770612, -10.8397, -0.172991, 7.50526)
+transform = Transform3D(-1.52228, 0, -0.0885937, 0, 1.54339, 0, 0.0628443, 0, -2.14601, -11.2541, -0.172991, 5.7372)
+
+[node name="chair3" parent="." instance=ExtResource("5_wowpa")]
+transform = Transform3D(1.53009, 0, 0.0967664, 0, 1.54339, 0, -0.077538, 0, 1.90954, -15.5328, -0.172991, 5.26895)
+
+[node name="chair4" parent="." instance=ExtResource("5_wowpa")]
+transform = Transform3D(-0.160289, 0, 2.13592, 0, 1.54339, 0, -1.51512, 0, -0.225964, -13.1557, -0.172991, 6.56754)

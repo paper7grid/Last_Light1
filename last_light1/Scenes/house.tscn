@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=31 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
 [ext_resource type="Material" uid="uid://boy2vlbx1o8oj" path="res://Assets/material/roof.tres" id="2_n87ef"]
 [ext_resource type="PackedScene" uid="uid://cmuu8gohgusn8" path="res://Scenes/table.tscn" id="4_iqtyj"]
+[ext_resource type="PackedScene" uid="uid://btaogsh1ovd7a" path="res://Scenes/bookcase.tscn" id="5_xi0mm"]
+[ext_resource type="PackedScene" uid="uid://dktct7146tptt" path="res://Scenes/drawers.tscn" id="6_bu6dc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -310,6 +312,10 @@ omni_range = 19.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, -9)
 omni_range = 19.0
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights inside/OmniLight3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5423, 2.8148, 20.3551)
+omni_range = 12.5021
+
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
 omni_range = 19.0
@@ -331,3 +337,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 497.675, 0, 85056.8)
 
 [node name="table" parent="." instance=ExtResource("4_iqtyj")]
 transform = Transform3D(0.345967, 0, 2.41262, 0, 0.167246, 0, -5.63714, 0, 0.148069, -8.80038, -2.0973, 18.7641)
+
+[node name="bookcase" parent="." instance=ExtResource("5_xi0mm")]
+transform = Transform3D(-1.00078, -0.00220642, 0.00493445, -0.00219541, 1.01082, -0.0031564, -0.00412046, -0.00267499, -1.1968, 17.131, -2.84987, 12.2173)
+
+[node name="drawers" parent="." instance=ExtResource("6_bu6dc")]
+transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, -13.5364, -2.33621, -11.3933)
+
+[node name="drawers2" parent="." instance=ExtResource("6_bu6dc")]
+transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0149399, 17.0058, -2.45041, -8.75855)
+
+[node name="drawers2" parent="drawers2" instance=ExtResource("6_bu6dc")]
+transform = Transform3D(-0.000698154, 0, 1.00003, 0, 1.00003, 0, -1.00003, 0, -0.000698154, -17.3533, 0.103792, 6.91495)
