@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=32 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmuu8gohgusn8" path="res://Scenes/table.tscn" id="4_iqtyj"]
 [ext_resource type="PackedScene" uid="uid://btaogsh1ovd7a" path="res://Scenes/bookcase.tscn" id="5_xi0mm"]
 [ext_resource type="PackedScene" uid="uid://dktct7146tptt" path="res://Scenes/drawers.tscn" id="6_bu6dc"]
+[ext_resource type="PackedScene" uid="uid://dukvcvrettwss" path="res://Scenes/couch.tscn" id="7_l3jqw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -349,3 +350,9 @@ transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0
 
 [node name="drawers2" parent="drawers2" instance=ExtResource("6_bu6dc")]
 transform = Transform3D(-0.000698154, 0, 1.00003, 0, 1.00003, 0, -1.00003, 0, -0.000698154, -17.3533, 0.103792, 6.91495)
+
+[node name="couch" parent="." instance=ExtResource("7_l3jqw")]
+transform = Transform3D(-0.00901403, 0, -3.94922, 0, 3.18948, 0, 2.95125, 0, -0.0120622, 12.8049, -4.29789, 4.3561)
+
+[node name="couch2" parent="." instance=ExtResource("7_l3jqw")]
+transform = Transform3D(0.0133507, 0, 4.2473, 0, 3.43024, 0, -3.174, 0, 0.0178653, 13.66, -4.29789, 26.1541)
