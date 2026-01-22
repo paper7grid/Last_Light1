@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=41 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ej013qmci120" path="res://Scenes/vase.tscn" id="9_7ug6d"]
 [ext_resource type="Texture2D" uid="uid://ct8siw5gccclb" path="res://Assets/Textures/fabric-texture-background.jpg" id="10_lmwq5"]
 [ext_resource type="PackedScene" uid="uid://cbm4aeyosld5v" path="res://Scenes/mattress.tscn" id="11_x4svt"]
+[ext_resource type="PackedScene" uid="uid://dbr3tsa266ldj" path="res://Scenes/bathtub.tscn" id="12_ttg8n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -243,6 +244,8 @@ albedo_texture = ExtResource("10_lmwq5")
 albedo_color = Color(0.479624, 0, 0.106411, 1)
 albedo_texture = ExtResource("10_lmwq5")
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_x4svt"]
+
 [node name="house" type="Node3D"]
 
 [node name="house_Meshes" type="Node3D" parent="."]
@@ -396,3 +399,22 @@ mesh = SubResource("QuadMesh_ttg8n")
 
 [node name="mattress" parent="." instance=ExtResource("11_x4svt")]
 transform = Transform3D(4.4814, 0, 0, 0, 4.4814, 0, 0, 0, 4.4814, -13.1296, -4.29775, -24.2878)
+
+[node name="Cube_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0270337, 0, 7.53229, 0, -5.28642, 0, -7.78338, 0, -0.0261615, 10.5884, -10.2982, -20.0665)
+material_override = ExtResource("1_okrnj")
+mesh = SubResource("ArrayMesh_yqlk2")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_okrnj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.51392, 0, 0, 0, 4.9179, 0, 0, 0, 1.3971, 7.89162, -10.2637, 14.6389)
+mesh = SubResource("CylinderMesh_x4svt")
+
+[node name="bathtub" parent="." instance=ExtResource("12_ttg8n")]
+transform = Transform3D(0.568419, 0, 0, 0, 0.568419, 0, 0, 0, 0.568419, 15.9005, -2.4919, -19.3818)
