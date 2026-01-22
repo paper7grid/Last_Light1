@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=37 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://btaogsh1ovd7a" path="res://Scenes/bookcase.tscn" id="5_xi0mm"]
 [ext_resource type="PackedScene" uid="uid://dktct7146tptt" path="res://Scenes/drawers.tscn" id="6_bu6dc"]
 [ext_resource type="PackedScene" uid="uid://dukvcvrettwss" path="res://Scenes/couch.tscn" id="7_l3jqw"]
+[ext_resource type="PackedScene" uid="uid://78eewrl6x66f" path="res://Scenes/tv.tscn" id="8_gau5j"]
+[ext_resource type="PackedScene" uid="uid://ej013qmci120" path="res://Scenes/vase.tscn" id="9_7ug6d"]
+[ext_resource type="Texture2D" uid="uid://ct8siw5gccclb" path="res://Assets/Textures/fabric-texture-background.jpg" id="10_lmwq5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -230,6 +233,11 @@ shadow_mesh = SubResource("ArrayMesh_a4gh7")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xi0mm"]
 points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4svt"]
+albedo_texture = ExtResource("10_lmwq5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ttg8n"]
+
 [node name="house" type="Node3D"]
 
 [node name="house_Meshes" type="Node3D" parent="."]
@@ -340,19 +348,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 497.675, 0, 85056.8)
 transform = Transform3D(0.345967, 0, 2.41262, 0, 0.167246, 0, -5.63714, 0, 0.148069, -8.80038, -2.0973, 18.7641)
 
 [node name="bookcase" parent="." instance=ExtResource("5_xi0mm")]
-transform = Transform3D(-1.00078, -0.00220642, 0.00493445, -0.00219541, 1.01082, -0.0031564, -0.00412046, -0.00267499, -1.1968, 17.131, -2.84987, 12.2173)
+transform = Transform3D(1.00063, 0.0021698, -0.0212263, -0.00219541, 1.01082, -0.0031564, 0.0177438, 0.00270477, 1.19662, -17.3577, -2.92111, 8.27005)
 
 [node name="drawers" parent="." instance=ExtResource("6_bu6dc")]
 transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, -13.5364, -2.33621, -11.3933)
 
 [node name="drawers2" parent="." instance=ExtResource("6_bu6dc")]
-transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0149399, 17.0058, -2.45041, -8.75855)
+transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0149399, 17.0055, -2.45041, -8.77961)
 
 [node name="drawers2" parent="drawers2" instance=ExtResource("6_bu6dc")]
 transform = Transform3D(-0.000698154, 0, 1.00003, 0, 1.00003, 0, -1.00003, 0, -0.000698154, -17.3533, 0.103792, 6.91495)
 
 [node name="couch" parent="." instance=ExtResource("7_l3jqw")]
-transform = Transform3D(-0.00901403, 0, -3.94922, 0, 3.18948, 0, 2.95125, 0, -0.0120622, 12.8049, -4.29789, 4.3561)
+transform = Transform3D(-0.00901403, 0, -3.94922, 0, 3.18948, 0, 2.95125, 0, -0.0120622, 11.566, -4.29789, 4.3561)
 
 [node name="couch2" parent="." instance=ExtResource("7_l3jqw")]
-transform = Transform3D(0.0133507, 0, 4.2473, 0, 3.43024, 0, -3.174, 0, 0.0178653, 13.66, -4.29789, 26.1541)
+transform = Transform3D(-3.17391, 0, 0.0376579, 0, 3.43024, 0, -0.0281417, 0, -4.24717, 16.2462, -4.31998, 10.1537)
+
+[node name="table2" parent="." instance=ExtResource("4_iqtyj")]
+transform = Transform3D(-5.95148, 0, 0.243056, 0, 0.139688, 0, -0.609671, 0, -2.37266, 14.8827, -2.77478, 18.2446)
+
+[node name="tv" parent="." instance=ExtResource("8_gau5j")]
+transform = Transform3D(0.0533393, 0, 0.492197, 0, 0.495079, 0, -0.492197, 0, 0.0533393, 14.5652, -1.81406, 17.9533)
+
+[node name="vase" parent="." instance=ExtResource("9_7ug6d")]
+transform = Transform3D(2.16821, 0, 0, 0, 2.16821, 0, 0, 0, 2.16821, -8.86065, -2.01852, 18.7462)
+
+[node name="Carpet" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.0428, 0, 0, 0, -6.94303e-07, 6.69146, 0, -15.8838, -2.92493e-07, 13.2085, -4.2389, 11.3244)
+material_override = SubResource("StandardMaterial3D_x4svt")
+mesh = SubResource("QuadMesh_ttg8n")
