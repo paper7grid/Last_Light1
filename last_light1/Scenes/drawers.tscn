@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dktct7146tptt"]
+[gd_scene load_steps=35 format=4 uid="uid://dktct7146tptt"]
 
 [ext_resource type="Material" uid="uid://buh8djq1fb1ul" path="res://Assets/material/tablecov.tres" id="1_b8bpj"]
 [ext_resource type="Material" uid="uid://boy2vlbx1o8oj" path="res://Assets/material/roof.tres" id="2_5wxiu"]
@@ -147,6 +147,42 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b0g4h")
+
+[sub_resource type="Animation" id="Animation_b8bpj"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.21637)]
+}
+
+[sub_resource type="Animation" id="Animation_5wxiu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wxiu"]
+_data = {
+&"RESET": SubResource("Animation_5wxiu"),
+&"open": SubResource("Animation_b8bpj")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_658p7"]
 resource_name = "Material.008"
@@ -342,25 +378,30 @@ material_override = ExtResource("1_b8bpj")
 mesh = SubResource("ArrayMesh_v8alu")
 skeleton = NodePath("")
 
-[node name="Drawer2" type="Node3D" parent="."]
+[node name="drawer2" type="Node3D" parent="."]
 
-[node name="Cube_004" type="MeshInstance3D" parent="Drawer2"]
+[node name="Cube_004" type="MeshInstance3D" parent="drawer2"]
 transform = Transform3D(1.01825, 0, 0, 0, 0.416152, 0, 0, 0, 1.04416, 1.14901, 0, 0.0589309)
 material_override = ExtResource("1_b8bpj")
 mesh = SubResource("ArrayMesh_0xnq7")
 skeleton = NodePath("")
 
-[node name="Cylinder_001" type="MeshInstance3D" parent="Drawer2"]
+[node name="Cylinder_001" type="MeshInstance3D" parent="drawer2"]
 transform = Transform3D(0.0899422, 0, 0, 0, -0.000965779, 0.0805926, 0, -0.0680859, -0.00114318, 1.24549, 0, 1.13124)
 material_override = ExtResource("2_5wxiu")
 mesh = SubResource("ArrayMesh_mne5t")
 skeleton = NodePath("")
 
-[node name="Sphere" type="MeshInstance3D" parent="Drawer2"]
+[node name="Sphere" type="MeshInstance3D" parent="drawer2"]
 transform = Transform3D(-0.114683, 0, 0, 0, 0.124159, 0, 0, 0, -0.114683, 1.24423, 0.00238601, 1.27663)
 material_override = ExtResource("3_3iqqh")
 mesh = SubResource("ArrayMesh_ikw18")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="drawer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_5wxiu")
+}
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.116483, 0, 0, 0, 0.709709, 0, 0, 0, 1.04416, -2.22401, -1.27752, 0)
@@ -374,25 +415,30 @@ material_override = ExtResource("1_b8bpj")
 mesh = SubResource("ArrayMesh_7giyf")
 skeleton = NodePath("")
 
-[node name="Drawer1" type="Node3D" parent="."]
+[node name="drawer1" type="Node3D" parent="."]
 
-[node name="Sphere_001" type="MeshInstance3D" parent="Drawer1"]
-transform = Transform3D(-0.114683, 0, 0, 0, 0.124159, 0, 0, 0, -0.114683, -1.17421, 0.00238601, 1.27974)
+[node name="Sphere_001" type="MeshInstance3D" parent="drawer1"]
+transform = Transform3D(-0.114683, 0, 0, 0, 0.124159, 0, 0, 0, -0.114683, -1.15631, 0.00942701, 1.28378)
 material_override = ExtResource("3_3iqqh")
 mesh = SubResource("ArrayMesh_b8bpj")
 skeleton = NodePath("")
 
-[node name="Cube_003" type="MeshInstance3D" parent="Drawer1"]
+[node name="Cube_003" type="MeshInstance3D" parent="drawer1"]
 transform = Transform3D(1.01825, 0, 0, 0, 0.416152, 0, 0, 0, 1.04416, -1.14045, 0, 0.0589309)
 material_override = ExtResource("1_b8bpj")
 mesh = SubResource("ArrayMesh_to8xr")
 skeleton = NodePath("")
 
-[node name="Cylinder_003" type="MeshInstance3D" parent="Drawer1"]
+[node name="Cylinder_003" type="MeshInstance3D" parent="drawer1"]
 transform = Transform3D(0.0899422, 0, 0, 0, -0.000965779, 0.0805926, 0, -0.0680859, -0.00114318, -1.17294, 0, 1.13435)
 material_override = ExtResource("2_5wxiu")
 mesh = SubResource("ArrayMesh_43tjf")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="drawer1"]
+libraries = {
+&"": SubResource("AnimationLibrary_5wxiu")
+}
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

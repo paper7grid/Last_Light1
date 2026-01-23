@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=48 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://g0tqyon7jpso" path="res://Scenes/door.tscn" id="15_j14gn"]
 [ext_resource type="PackedScene" uid="uid://dxjuux55r33hr" path="res://Scenes/lightbulb.tscn" id="16_tj63m"]
 [ext_resource type="PackedScene" uid="uid://bvf2c8mjmxawt" path="res://Scenes/fridge.tscn" id="17_4dwi4"]
+[ext_resource type="PackedScene" uid="uid://bwccdebrtygk7" path="res://Scenes/oven.tscn" id="18_gslo5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -367,7 +368,7 @@ transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -6.29053, -6.5433
 transform = Transform3D(0.345967, 0, 2.41262, 0, 0.167246, 0, -5.63714, 0, 0.148069, -8.80038, -2.0973, 18.7641)
 
 [node name="bookcase" parent="." instance=ExtResource("5_xi0mm")]
-transform = Transform3D(1.00063, 0.0021698, -0.0212263, -0.00219541, 1.01082, -0.0031564, 0.0177438, 0.00270477, 1.19662, -17.3577, -2.92111, 8.27005)
+transform = Transform3D(0.013133, 0.00269474, 1.1967, -0.00219541, 1.01082, -0.0031564, -1.0007, -0.00218224, 0.0157124, 12.2991, -2.92111, 26.349)
 
 [node name="drawers" parent="." instance=ExtResource("6_bu6dc")]
 transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, -13.5364, -2.33621, -11.3933)
@@ -469,7 +470,10 @@ transform = Transform3D(0.915833, 0, 0.0272938, 0, 1.66589, 0, -0.0122286, 0, 2.
 transform = Transform3D(-0.809225, 0, 1.77389e-07, 0, 1.67632, 0, -7.07447e-08, 0, -2.02909, 7.04703, -1.93895, -19.9915)
 
 [node name="fridge" parent="." instance=ExtResource("17_4dwi4")]
-transform = Transform3D(2.25702, 0, 0, 0, 2.25702, 0, 0, 0, 2.25702, -16.5709, -4.29894, 13.5106)
+transform = Transform3D(2.51675, 0, 0, 0, 2.51675, 0, 0, 0, 2.51675, -17.1831, -4.29894, 15.4089)
 
 [node name="couch3" parent="." instance=ExtResource("7_l3jqw")]
 transform = Transform3D(0.0791272, 0, 5.31167, 0, 4.29066, 0, -3.96941, 0, 0.105884, -7.80619, -14.6251, 20.0233)
+
+[node name="oven" parent="." instance=ExtResource("18_gslo5")]
+transform = Transform3D(0.95442, 0, 0, 0, 0.95442, 0, 0, 0, 0.95442, -16.3541, -2.39672, 11.1395)
