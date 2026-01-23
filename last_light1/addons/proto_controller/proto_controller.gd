@@ -4,6 +4,7 @@
 # Happy prototyping!
 
 extends CharacterBody3D
+@onready var flashlight: SpotLight3D = $Head/flashlight
 
 ## Can we move around?
 @export var can_move : bool = true
@@ -176,3 +177,7 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("flashlight"):
+		flashlight.visible = !flashlight.visible
