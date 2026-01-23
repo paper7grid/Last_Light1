@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=4 uid="uid://dktct7146tptt"]
+[gd_scene load_steps=39 format=4 uid="uid://dktct7146tptt"]
 
 [ext_resource type="Material" uid="uid://buh8djq1fb1ul" path="res://Assets/material/tablecov.tres" id="1_b8bpj"]
+[ext_resource type="Script" uid="uid://f6eg8vrewsl5" path="res://Scripts/door.gd" id="2_3iqqh"]
 [ext_resource type="Material" uid="uid://boy2vlbx1o8oj" path="res://Assets/material/roof.tres" id="2_5wxiu"]
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="3_3iqqh"]
 
@@ -79,6 +80,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i3v7s")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5wxiu"]
+data = PackedVector3Array(0.9253, -0.7238, 0.9344, -0.9375, 1, 0.9344, -0.9375, -0.7238, 0.9344, 0.9253, -0.7238, 0.9344, 0.9253, 1, 0.9344, -0.9375, 1, 0.9344, -0.9375, -0.7238, 0.9344, -0.9375, 1, -0.9344, -0.9375, -0.7238, -0.9344, -0.9375, -0.7238, 0.9344, -0.9375, 1, 0.9344, -0.9375, 1, -0.9344, -0.9375, -0.7238, -0.9344, 0.9253, -0.7238, 0.9344, -0.9375, -0.7238, 0.9344, -0.9375, -0.7238, -0.9344, 0.9253, -0.7238, -0.9344, 0.9253, -0.7238, 0.9344, 0.9253, -0.7238, -0.9344, 0.9253, 1, 0.9344, 0.9253, -0.7238, 0.9344, 0.9253, -0.7238, -0.9344, 0.9253, 1, -0.9344, 0.9253, 1, 0.9344, -0.9375, -0.7238, -0.9344, 0.9253, 1, -0.9344, 0.9253, -0.7238, -0.9344, -0.9375, -0.7238, -0.9344, -0.9375, 1, -0.9344, 0.9253, 1, -0.9344, 0.9253, 1, -0.9344, -1, 1, -1, 1, 1, -1, -0.9375, 1, -0.9344, -1, 1, -1, 0.9253, 1, -0.9344, 1, 1, -1, 0.9253, 1, 0.9344, 0.9253, 1, -0.9344, -1, 1, -1, -0.9375, 1, -0.9344, -0.9375, 1, 0.9344, 1, 1, 1, 0.9253, 1, 0.9344, 1, 1, -1, -1, 1, -1, -0.9375, 1, 0.9344, -1, 1, 1, 0.9253, 1, 0.9344, 1, 1, 1, -1, 1, 1, 0.9253, 1, 0.9344, -1, 1, 1, -0.9375, 1, 0.9344, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6ma4"]
 
@@ -178,9 +182,25 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_3iqqh"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.21637), Vector3(0, 0, -0.0223829)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5wxiu"]
 _data = {
 &"RESET": SubResource("Animation_5wxiu"),
+&"close": SubResource("Animation_3iqqh"),
 &"open": SubResource("Animation_b8bpj")
 }
 
@@ -332,6 +352,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g1ujw")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b8bpj"]
+data = PackedVector3Array(0.9314, -0.7238, 0.9344, -0.9314, 1, 0.9344, -0.9314, -0.7238, 0.9344, 0.9314, -0.7238, 0.9344, 0.9314, 1, 0.9344, -0.9314, 1, 0.9344, -0.9314, -0.7238, 0.9344, -0.9314, 1, -0.9344, -0.9314, -0.7238, -0.9344, -0.9314, -0.7238, 0.9344, -0.9314, 1, 0.9344, -0.9314, 1, -0.9344, -0.9314, -0.7238, -0.9344, 0.9314, -0.7238, 0.9344, -0.9314, -0.7238, 0.9344, -0.9314, -0.7238, -0.9344, 0.9314, -0.7238, -0.9344, 0.9314, -0.7238, 0.9344, 0.9314, -0.7238, -0.9344, 0.9314, 1, 0.9344, 0.9314, -0.7238, 0.9344, 0.9314, -0.7238, -0.9344, 0.9314, 1, -0.9344, 0.9314, 1, 0.9344, -0.9314, -0.7238, -0.9344, 0.9314, 1, -0.9344, 0.9314, -0.7238, -0.9344, -0.9314, -0.7238, -0.9344, -0.9314, 1, -0.9344, 0.9314, 1, -0.9344, 0.9314, 1, -0.9344, -1, 1, -1, 1, 1, -1, -0.9314, 1, -0.9344, -1, 1, -1, 0.9314, 1, -0.9344, 1, 1, -1, 0.9314, 1, 0.9344, 0.9314, 1, -0.9344, -1, 1, -1, -0.9314, 1, -0.9344, -0.9314, 1, 0.9344, 1, 1, 1, 0.9314, 1, 0.9344, 1, 1, -1, -1, 1, -1, -0.9314, 1, 0.9344, -1, 1, 1, 0.9314, 1, 0.9344, 1, 1, 1, -1, 1, 1, 0.9314, 1, 0.9344, -1, 1, 1, -0.9314, 1, 0.9344, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e114v"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_a6aby"]
@@ -379,12 +402,18 @@ mesh = SubResource("ArrayMesh_v8alu")
 skeleton = NodePath("")
 
 [node name="drawer2" type="Node3D" parent="."]
+script = ExtResource("2_3iqqh")
 
 [node name="Cube_004" type="MeshInstance3D" parent="drawer2"]
 transform = Transform3D(1.01825, 0, 0, 0, 0.416152, 0, 0, 0, 1.04416, 1.14901, 0, 0.0589309)
 material_override = ExtResource("1_b8bpj")
 mesh = SubResource("ArrayMesh_0xnq7")
 skeleton = NodePath("")
+
+[node name="drawer" type="StaticBody3D" parent="drawer2/Cube_004"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="drawer2/Cube_004/drawer"]
+shape = SubResource("ConcavePolygonShape3D_5wxiu")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="drawer2"]
 transform = Transform3D(0.0899422, 0, 0, 0, -0.000965779, 0.0805926, 0, -0.0680859, -0.00114318, 1.24549, 0, 1.13124)
@@ -416,6 +445,7 @@ mesh = SubResource("ArrayMesh_7giyf")
 skeleton = NodePath("")
 
 [node name="drawer1" type="Node3D" parent="."]
+script = ExtResource("2_3iqqh")
 
 [node name="Sphere_001" type="MeshInstance3D" parent="drawer1"]
 transform = Transform3D(-0.114683, 0, 0, 0, 0.124159, 0, 0, 0, -0.114683, -1.15631, 0.00942701, 1.28378)
@@ -429,6 +459,11 @@ material_override = ExtResource("1_b8bpj")
 mesh = SubResource("ArrayMesh_to8xr")
 skeleton = NodePath("")
 
+[node name="drawer" type="StaticBody3D" parent="drawer1/Cube_003"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="drawer1/Cube_003/drawer"]
+shape = SubResource("ConcavePolygonShape3D_b8bpj")
+
 [node name="Cylinder_003" type="MeshInstance3D" parent="drawer1"]
 transform = Transform3D(0.0899422, 0, 0, 0, -0.000965779, 0.0805926, 0, -0.0680859, -0.00114318, -1.17294, 0, 1.13435)
 material_override = ExtResource("2_5wxiu")
@@ -441,6 +476,7 @@ libraries = {
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.739775, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1.57229, 0, 0, 0, 2.56305, 0, 0, 0, 2.01417, 0.0091452, -0.537955, 0)
