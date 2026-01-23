@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://g0tqyon7jpso"]
+[gd_scene load_steps=12 format=3 uid="uid://g0tqyon7jpso"]
 
 [ext_resource type="Script" uid="uid://f6eg8vrewsl5" path="res://Scripts/door.gd" id="1_w6aom"]
+[ext_resource type="Material" uid="uid://buh8djq1fb1ul" path="res://Assets/material/tablecov.tres" id="2_ab4ky"]
+[ext_resource type="Material" uid="uid://ddprsu3iqxcox" path="res://Assets/material/sofa.tres" id="3_ab4ky"]
+[ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="4_burcv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h7j2x"]
 
@@ -69,6 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.842592)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge"]
 transform = Transform3D(0.100159, 0, 0, 0, 2.8318, 0, 0, 0, 1.67458, 0, 0, -0.842592)
+material_override = ExtResource("2_ab4ky")
 mesh = SubResource("BoxMesh_h7j2x")
 skeleton = NodePath("../..")
 
@@ -82,11 +86,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612712, 0.0275527, -0.894
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Hinge/Knobs"]
 transform = Transform3D(-8.79323e-09, -0.0483228, 0, 0.201166, -2.11225e-09, 0, 0, 0, 0.199833, 0.260623, 0.0445265, -0.592152)
+material_override = ExtResource("3_ab4ky")
 mesh = SubResource("CylinderMesh_h7j2x")
 skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Door")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Hinge/Knobs"]
 transform = Transform3D(-6.11346e-09, -0.0718485, 0, 0.13986, -3.1406e-09, 0, 0, 0, 0.138934, 0.14546, 0.0445265, -0.592152)
+material_override = ExtResource("4_burcv")
 mesh = SubResource("CylinderMesh_h7j2x")
 skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Door")
 

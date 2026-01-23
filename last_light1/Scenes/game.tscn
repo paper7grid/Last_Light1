@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxx318rchuooe"]
+[gd_scene load_steps=12 format=3 uid="uid://dxx318rchuooe"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://q0mj6pni7aje" path="res://Scenes/world_environment.gd" id="1_qxrlw"]
@@ -6,9 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://myqls52h33ed" path="res://Scenes/stairs.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dk2tlkgit6gla" path="res://Assets/material/chair.tscn" id="5_wowpa"]
 
+[sub_resource type="Gradient" id="Gradient_wowpa"]
+offsets = PackedFloat32Array(0, 0.990566, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.245955, 0.363969, 0.682124, 1, 0.329139, 0.359551, 0.353908, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i6g32"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1l0tm"]
+seamless = true
+color_ramp = SubResource("Gradient_wowpa")
+noise = SubResource("FastNoiseLite_i6g32")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2poj3"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.0293553, 0.0416697, 0.194676, 1)
+sky_horizon_color = Color(0.0553906, 0.145834, 0.314126, 1)
+sky_cover = SubResource("NoiseTexture2D_1l0tm")
+ground_bottom_color = Color(0.104615, 0.0850559, 0.062335, 1)
+ground_horizon_color = Color(0.111243, 0.110167, 0.0731372, 1)
 
 [sub_resource type="Sky" id="Sky_ebmjs"]
 sky_material = SubResource("ProceduralSkyMaterial_2poj3")
@@ -16,8 +30,15 @@ sky_material = SubResource("ProceduralSkyMaterial_2poj3")
 [sub_resource type="Environment" id="Environment_qxrlw"]
 background_mode = 2
 sky = SubResource("Sky_ebmjs")
-tonemap_mode = 2
+tonemap_mode = 3
+ssr_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
+glow_intensity = 2.06
+fog_light_color = Color(0, 0, 0, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.83
 
 [node name="Game" type="Node"]
 
@@ -27,6 +48,7 @@ script = ExtResource("1_qxrlw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 1.47562e-08, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]

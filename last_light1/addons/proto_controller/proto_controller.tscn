@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs72ogkvdd7d6"]
+[gd_scene load_steps=7 format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://dilpq440mtxxb" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="Script" uid="uid://b0ts4wnrs8it4" path="res://Scripts/playerinteract.gd" id="2_wr06p"]
+[ext_resource type="Script" uid="uid://d0k33iady7fko" path="res://addons/proto_controller/flashlight.gd" id="3_5hfox"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -36,5 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1.2, 0, 1, -5.24537e-08, 0, 0, 0)
-target_position = Vector3(0, -1.5, 0)
+target_position = Vector3(0, -2, 0)
 script = ExtResource("2_wr06p")
+
+[node name="flashlight" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539303, 0.00959277, -0.212585)
+spot_range = 25.0
+spot_angle = 39.55
+script = ExtResource("3_5hfox")

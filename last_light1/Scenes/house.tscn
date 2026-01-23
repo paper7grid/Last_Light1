@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=47 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cby52q26nsvpg" path="res://Scenes/sink.tscn" id="13_0h1dt"]
 [ext_resource type="PackedScene" uid="uid://bmsoydfvblw7h" path="res://Scenes/window.tscn" id="14_karln"]
 [ext_resource type="PackedScene" uid="uid://g0tqyon7jpso" path="res://Scenes/door.tscn" id="15_j14gn"]
+[ext_resource type="PackedScene" uid="uid://dxjuux55r33hr" path="res://Scenes/lightbulb.tscn" id="16_tj63m"]
+[ext_resource type="PackedScene" uid="uid://bvf2c8mjmxawt" path="res://Scenes/fridge.tscn" id="17_4dwi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -327,36 +329,39 @@ shape = SubResource("ConvexPolygonShape3D_xi0mm")
 
 [node name="Lights inside" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, 18)
-omni_range = 19.0
+[node name="lightbulb" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 11.241, 3.6774, 13.6615)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, -9)
-omni_range = 19.0
+[node name="lightbulb2" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -13.3261, 3.6774, 16.4562)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights inside/OmniLight3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5423, 2.8148, 20.3551)
-omni_range = 12.5021
+[node name="lightbulb3" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -13.3261, 3.6774, -8.23315)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
-omni_range = 19.0
+[node name="lightbulb4" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 12.2854, 3.6774, -4.38551)
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
-omni_range = 19.0
+[node name="lightbulb5" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 11.9625, 3.6774, -19.8466)
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -4)
-omni_range = 12.0
+[node name="lightbulb6" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -11.4166, 3.6774, -19.8466)
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -22)
-omni_range = 9.0
+[node name="lightbulb7" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.775074, -6.54761, 15.9654)
+visible = false
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Lights inside"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 497.675, 0, 85056.8)
+[node name="lightbulb8" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 10.6531, -6.54761, -19.0599)
+
+[node name="lightbulb9" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.848058, 3.6774, 16.4562)
+
+[node name="lightbulb10" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.848058, 3.6774, -15.6832)
+
+[node name="lightbulb11" parent="Lights inside" instance=ExtResource("16_tj63m")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -6.29053, -6.54337, -1.88144)
 
 [node name="table" parent="." instance=ExtResource("4_iqtyj")]
 transform = Transform3D(0.345967, 0, 2.41262, 0, 0.167246, 0, -5.63714, 0, 0.148069, -8.80038, -2.0973, 18.7641)
@@ -438,14 +443,33 @@ transform = Transform3D(0.228102, -12.6607, -2.92444e-07, 0, -5.53509e-07, 6.691
 material_override = SubResource("StandardMaterial3D_0h1dt")
 mesh = SubResource("QuadMesh_ttg8n")
 
-[node name="window" parent="." instance=ExtResource("14_karln")]
+[node name="windows" type="Node3D" parent="."]
+
+[node name="window" parent="windows" instance=ExtResource("14_karln")]
 transform = Transform3D(1, 0, 0, 0, 1.42936, 0, 0, 0, 1.21629, 18.9578, -0.284, 17.091)
 
-[node name="window2" parent="." instance=ExtResource("14_karln")]
+[node name="window2" parent="windows" instance=ExtResource("14_karln")]
 transform = Transform3D(1, 0, 0, 0, 1.43073, 0, 0, 0, 1.20613, 18.7873, -0.284, -2.73187)
 
-[node name="window3" parent="." instance=ExtResource("14_karln")]
+[node name="window3" parent="windows" instance=ExtResource("14_karln")]
 transform = Transform3D(0.753891, 0, 0, 0, 1.01566, 0, 0, 0, 0.855871, -18.9429, 2.10941, 8.09865)
 
-[node name="Door" parent="." instance=ExtResource("15_j14gn")]
+[node name="Door" type="Node3D" parent="."]
+
+[node name="Door" parent="Door" instance=ExtResource("15_j14gn")]
 transform = Transform3D(0.0496087, 0, -2.02658, 0, 1.94899, 0, 0.955525, 0, 0.105216, 6.47596, -2.56919, 27.6641)
+
+[node name="Door2" parent="Door" instance=ExtResource("15_j14gn")]
+transform = Transform3D(0.00477603, 0, -2.02928, 0, 1.94899, 0, 0.9568, 0, 0.01013, 6.46402, -1.52951, 2.89173)
+
+[node name="Door3" parent="Door" instance=ExtResource("15_j14gn")]
+transform = Transform3D(0.915833, 0, 0.0272938, 0, 1.66589, 0, -0.0122286, 0, 2.04406, -3.59703, -1.94655, -22.3949)
+
+[node name="Door4" parent="Door" instance=ExtResource("15_j14gn")]
+transform = Transform3D(-0.809225, 0, 1.77389e-07, 0, 1.67632, 0, -7.07447e-08, 0, -2.02909, 7.04703, -1.93895, -19.9915)
+
+[node name="fridge" parent="." instance=ExtResource("17_4dwi4")]
+transform = Transform3D(2.25702, 0, 0, 0, 2.25702, 0, 0, 0, 2.25702, -16.5709, -4.29894, 13.5106)
+
+[node name="couch3" parent="." instance=ExtResource("7_l3jqw")]
+transform = Transform3D(0.0791272, 0, 5.31167, 0, 4.29066, 0, -3.96941, 0, 0.105884, -7.80619, -14.6251, 20.0233)
