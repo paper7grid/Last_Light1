@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=45 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dbr3tsa266ldj" path="res://Scenes/bathtub.tscn" id="12_ttg8n"]
 [ext_resource type="PackedScene" uid="uid://cby52q26nsvpg" path="res://Scenes/sink.tscn" id="13_0h1dt"]
 [ext_resource type="PackedScene" uid="uid://bmsoydfvblw7h" path="res://Scenes/window.tscn" id="14_karln"]
+[ext_resource type="PackedScene" uid="uid://g0tqyon7jpso" path="res://Scenes/door.tscn" id="15_j14gn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -445,3 +446,6 @@ transform = Transform3D(1, 0, 0, 0, 1.43073, 0, 0, 0, 1.20613, 18.7873, -0.284, 
 
 [node name="window3" parent="." instance=ExtResource("14_karln")]
 transform = Transform3D(0.753891, 0, 0, 0, 1.01566, 0, 0, 0, 0.855871, -18.9429, 2.10941, 8.09865)
+
+[node name="Door" parent="." instance=ExtResource("15_j14gn")]
+transform = Transform3D(0.0496087, 0, -2.02658, 0, 1.94899, 0, 0.955525, 0, 0.105216, 6.47596, -2.56919, 27.6641)
