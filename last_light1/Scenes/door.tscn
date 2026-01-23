@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://g0tqyon7jpso"]
+[gd_scene load_steps=9 format=3 uid="uid://g0tqyon7jpso"]
+
+[ext_resource type="Script" uid="uid://f6eg8vrewsl5" path="res://Scripts/door.gd" id="1_w6aom"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h7j2x"]
 
@@ -60,6 +62,7 @@ _data = {
 }
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_w6aom")
 
 [node name="Hinge" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.842592)
