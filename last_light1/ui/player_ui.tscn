@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cptnkxy7cp8su"]
+
+[ext_resource type="Texture2D" uid="uid://bymtociw1k520" path="res://ui/ELR_Corsshairs.png" id="1_cfom6"]
+
+[node name="player_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="crosshair" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 1260.0
+offset_bottom = 762.0
+
+[node name="crosshairarr" type="TextureRect" parent="CanvasLayer/crosshair"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_cfom6")
