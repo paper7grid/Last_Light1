@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://deofrenlrwn5h"]
+
+[ext_resource type="Texture2D" uid="uid://bf0e0febmdex5" path="res://Assets/Textures/detailed_red_blood_splatter_on_a_black_background_1508-removebg-preview.png" id="1_uflqw"]
+
+[node name="blood2" type="Decal"]
+texture_albedo = ExtResource("1_uflqw")

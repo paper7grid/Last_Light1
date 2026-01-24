@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=55 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://dxjuux55r33hr" path="res://Scenes/lightbulb.tscn" id="16_tj63m"]
 [ext_resource type="PackedScene" uid="uid://bvf2c8mjmxawt" path="res://Scenes/fridge.tscn" id="17_4dwi4"]
 [ext_resource type="PackedScene" uid="uid://bwccdebrtygk7" path="res://Scenes/oven.tscn" id="18_gslo5"]
+[ext_resource type="Material" uid="uid://ckl14ht0t747y" path="res://Assets/material/wood2.tres" id="19_a7v5j"]
+[ext_resource type="PackedScene" uid="uid://cf1lsmpmvbqbx" path="res://Scenes/blood.tscn" id="20_36e0i"]
+[ext_resource type="PackedScene" uid="uid://deofrenlrwn5h" path="res://Scenes/blood_2.tscn" id="21_78jbw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -258,6 +261,17 @@ albedo_color = Color(0.474569, 0.625886, 1, 1)
 albedo_texture = ExtResource("10_lmwq5")
 albedo_texture_force_srgb = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_gslo5"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a7v5j"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_36e0i"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_78jbw"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="house" type="Node3D"]
 
 [node name="house_Meshes" type="Node3D" parent="."]
@@ -477,3 +491,201 @@ transform = Transform3D(0.0791272, 0, 5.31167, 0, 4.29066, 0, -3.96941, 0, 0.105
 
 [node name="oven" parent="." instance=ExtResource("18_gslo5")]
 transform = Transform3D(0.95442, 0, 0, 0, 0.95442, 0, 0, 0, 0.95442, -16.3541, -2.39672, 11.1395)
+
+[node name="Boxes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0152917, 1.19209e-07, -0.0139894)
+
+[node name="Box" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(1.69844, 0, 0, 0, 1.69844, 0, 0, 0, 1.69844, 6.33139, -3.37834, -11.4303)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a7v5j")
+
+[node name="Box2" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(1.69844, 0, 0, 0, 1.69844, 0, 0, 0, 1.69844, 8.29417, -3.37834, -11.4303)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_36e0i")
+
+[node name="Box3" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(1.69844, 0, 0, 0, 1.69844, 0, 0, 0, 1.69844, 7.51102, -1.70795, -11.4303)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_78jbw")
+
+[node name="Box4" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00733407, 0, 2.1886, 0, 2.18861, 0, -2.1886, 0, -0.00733407, 16.7589, -14.3112, 6.46458)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a7v5j")
+
+[node name="Box5" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00733407, 0, 2.1886, 0, 2.18861, 0, -2.1886, 0, -0.00733407, 16.7505, -14.3112, 3.93537)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_36e0i")
+
+[node name="Box6" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00733407, 0, 2.1886, 0, 2.18861, 0, -2.1886, 0, -0.00733407, 16.7538, -12.1588, 4.94453)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_78jbw")
+
+[node name="Box7" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00888645, 0, 2.65186, 0, 2.65187, 0, -2.65186, 0, -0.00888645, 16.7599, -14.4631, 19.8829)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a7v5j")
+
+[node name="Box8" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00888645, 0, 2.65186, 0, 2.65187, 0, -2.65186, 0, -0.00888645, 16.7496, -14.4631, 16.8183)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_36e0i")
+
+[node name="Box9" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00888645, 0, 2.65186, 0, 2.65187, 0, -2.65186, 0, -0.00888645, 16.7537, -11.8551, 18.0411)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_78jbw")
+
+[node name="Box10" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00888645, 0, 2.65186, 0, 2.65187, 0, -2.65186, 0, -0.00888645, 16.8272, -13.7267, -0.445191)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a7v5j")
+
+[node name="Box11" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00888645, 0, 2.65186, 0, 2.65187, 0, -2.65186, 0, -0.00888645, 16.8169, -13.7267, -3.50976)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_36e0i")
+
+[node name="Box12" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-0.00888645, 0, 2.65186, 0, 2.65187, 0, -2.65186, 0, -0.00888645, 16.821, -11.1186, -2.28699)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_78jbw")
+
+[node name="Box13" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-2.65164, 0, -0.0351283, 0, 2.65187, 0, 0.0351283, 0, -2.65164, 0.791803, -13.7267, -16.6564)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a7v5j")
+
+[node name="Box14" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-2.65164, 0, -0.0351283, 0, 2.65187, 0, 0.0351283, 0, -2.65164, -2.27251, -13.7267, -16.6159)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_36e0i")
+
+[node name="Box15" type="MeshInstance3D" parent="Boxes"]
+transform = Transform3D(-2.65164, 0, -0.0351283, 0, 2.65187, 0, 0.0351283, 0, -2.65164, -1.04985, -11.1186, -16.632)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_gslo5")
+skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boxes/Box15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box15/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_78jbw")
+
+[node name="drawers3" parent="." instance=ExtResource("6_bu6dc")]
+transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, 7.83572, -13.0229, -25.733)
+
+[node name="Carpet5" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.49857, 0, 0, 0, -5.87544e-07, 5.66255, 0, -13.4414, -2.47518e-07, 8.78909, -14.9169, -21.3334)
+material_override = SubResource("StandardMaterial3D_x4svt")
+mesh = SubResource("QuadMesh_ttg8n")
+
+[node name="bloods" type="Node3D" parent="."]
+
+[node name="blood" parent="bloods" instance=ExtResource("20_36e0i")]
+transform = Transform3D(-2.36117, 0, -0.0706143, 0, 2.36223, 0, 0.0706143, 0, -2.36117, 4.50595, -4.79888, -24.8965)
+distance_fade_begin = 40.5
+
+[node name="blood2" parent="bloods" instance=ExtResource("21_78jbw")]
+transform = Transform3D(2.04471, 0, 0, 0, 2.04471, 0, 0, 0, 2.04471, -9.63103, -3.93561, -10.5081)
+
+[node name="blood3" parent="bloods" instance=ExtResource("21_78jbw")]
+transform = Transform3D(1.74478, 0, 0, 0, 1.74478, 0, 0, 0, 1.74478, -9.34088, -3.95298, 15.0081)
+upper_fade = 0.848529
+
+[node name="blood4" parent="bloods" instance=ExtResource("21_78jbw")]
+transform = Transform3D(1.44537, -1.32669, -0.57586, 1.40816, 1.4766, 0.132515, 0.329881, -0.490259, 1.95746, 15.1666, -14.9515, -4.50655)
+
+[node name="blood5" parent="bloods" instance=ExtResource("21_78jbw")]
+transform = Transform3D(-0.190673, -0.000864065, 2.0358, 1.40816, 1.4766, 0.132515, -1.47023, 1.41438, -0.137101, -3.95436, -14.9515, 17.9347)
+
+[node name="blood6" parent="bloods" instance=ExtResource("21_78jbw")]
+transform = Transform3D(-0.690896, 0.491903, 1.86052, 1.40816, 1.4766, 0.132515, -1.31171, 1.32609, -0.837703, 11.1086, -14.6847, -24.1228)

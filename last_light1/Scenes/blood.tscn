@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf1lsmpmvbqbx"]
+
+[ext_resource type="Texture2D" uid="uid://caicqhtfs37h3" path="res://Assets/Textures/bloodsplat_big-removebg-preview.png" id="1_rgh2v"]
+
+[node name="blood" type="Decal"]
+texture_albedo = ExtResource("1_rgh2v")
+upper_fade = 0.369343
