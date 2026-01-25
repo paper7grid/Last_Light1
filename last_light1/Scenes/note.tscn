@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://bhp7p7piyhsrq"]
+[gd_scene load_steps=4 format=3 uid="uid://bhp7p7piyhsrq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pdcj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ucs03"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1pdcj"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [node name="note" type="Node3D"]
+
+[node name="papernote" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.862204, 0, 0, 0, 0.0225397, 0, 0, 0, 1.22476, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_1pdcj")
+mesh = SubResource("BoxMesh_ucs03")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="papernote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papernote/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1pdcj")
