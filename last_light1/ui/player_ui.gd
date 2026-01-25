@@ -1,10 +1,23 @@
 extends Control
-var can_move := false
+var current_task_id: int = 1  
 #  when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$pause_menu.visible = false
 	set_task("Pick up the paper and read it")
+	$taskui/tasktxt.text = "Pick up the paper and read it"
+	print("Game Started. Current Task ID is: ", current_task_id)
+
 	
+func set_task(tasktxt: String):
+	$taskui/tasktxt.text = tasktxt
+	
+func advance_task(id: int, next_task_text: String):
+	if id == current_task_id:
+		
+		set_task(next_task_text)
+		current_task_id += 1
+		print("Task Advanced to: ", current_task_id)
+
 func resume_game():
 	get_tree().paused = false
 	$pause_menu.visible = false
@@ -12,9 +25,7 @@ func resume_game():
 	
 func quit_game():
 	get_tree().quit()
-	
-func set_task(tasktxt: String):
-	$taskui/tasktxt.text = tasktxt
+
 	
 	
 func _process(delta: float) -> void:

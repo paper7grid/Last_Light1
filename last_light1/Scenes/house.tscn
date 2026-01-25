@@ -388,7 +388,7 @@ transform = Transform3D(0.013133, 0.00269474, 1.1967, -0.00219541, 1.01082, -0.0
 [node name="drawers" parent="." instance=ExtResource("6_bu6dc")]
 transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, -13.5364, -2.33621, -11.3933)
 
-[node name="drawers2" parent="." instance=ExtResource("6_bu6dc")]
+[node name="drawers2" parent="." groups=["firstd"] instance=ExtResource("6_bu6dc")]
 transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0149399, 17.0055, -2.45041, -8.77961)
 
 [node name="drawers2" parent="drawers2" instance=ExtResource("6_bu6dc")]
@@ -701,4 +701,4 @@ mesh = SubResource("QuadMesh_ttg8n")
 skeleton = NodePath("../..")
 
 [node name="note" parent="." instance=ExtResource("22_218mn")]
-transform = Transform3D(0.557368, 0, 0.830265, 0, 1, 0, -0.830265, 0, 0.557368, 8.26003, -4.20411, -1.92602)
+transform = Transform3D(0.557368, 0, 0.830265, 0, 1, 0, -0.830265, 0, 0.557368, 8.26406, -4.19718, -1.92002)
