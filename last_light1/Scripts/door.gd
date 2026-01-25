@@ -8,3 +8,5 @@ func toggle_door():
 			$AnimationPlayer.play("close")
 		if opened:
 			$AnimationPlayer.play("open")
+			
+			

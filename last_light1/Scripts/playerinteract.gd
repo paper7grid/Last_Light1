@@ -8,7 +8,6 @@ func _physics_process(_delta: float) -> void:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hit.get_parent().get_parent().get_parent().toggle_door()
-				
 		elif hit.name == "drawer":
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -17,10 +16,6 @@ func _physics_process(_delta: float) -> void:
 		else: 
 			if crosshair.visible:
 				crosshair.visible = false
-				
 	else:
 		if crosshair.visible:
 			crosshair.visible = false
-
-				
-				
