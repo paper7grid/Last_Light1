@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxx318rchuooe"]
+[gd_scene load_steps=13 format=3 uid="uid://dxx318rchuooe"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://q0mj6pni7aje" path="res://Scenes/world_environment.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://coac77qko23re" path="res://Scenes/house.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://myqls52h33ed" path="res://Scenes/stairs.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dk2tlkgit6gla" path="res://Assets/material/chair.tscn" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://dd4dtlnc1qf26" path="res://Scenes/task_trigger.tscn" id="6_i6g32"]
 
 [sub_resource type="Gradient" id="Gradient_wowpa"]
 offsets = PackedFloat32Array(0, 0.990566, 1)
@@ -60,7 +61,7 @@ size = Vector3(2, 1, 1)
 transform = Transform3D(-0.775848, 0, -0.63092, 0, 1, 0, 0.63092, 0, -0.775848, -24.179, -0.267431, -5.76545)
 
 [node name="H_House2" parent="." instance=ExtResource("3_wrm1d")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -22.8704, 2, 1)
+transform = Transform3D(-0.00194606, 0, 0.499996, 0, 0.5, 0, -0.499996, 0, -0.00194606, -22.8704, 2, 1)
 
 [node name="stairs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000254869, -0.00667417, -5.72205e-05)
@@ -84,3 +85,11 @@ transform = Transform3D(1.53009, 0, 0.0967664, 0, 1.54339, 0, -0.077538, 0, 1.90
 
 [node name="chair4" parent="Chair" instance=ExtResource("5_wowpa")]
 transform = Transform3D(-0.160289, 0, 2.13592, 0, 1.54339, 0, -1.51512, 0, -0.225964, -13.1557, -0.172991, 6.56754)
+
+[node name="task_trigger" parent="." instance=ExtResource("6_i6g32")]
+transform = Transform3D(1.38809, 0, 0, 0, 1.38809, 0, 0, 0, 1.38809, -24.1649, -0.433687, -4.76309)
+tasktxt = "Pick up the paper and read the note"
+
+[node name="task_trigger2" parent="." instance=ExtResource("6_i6g32")]
+transform = Transform3D(1.58729, 0, 0, 0, 1.58729, 0, 0, 0, 1.58729, -27.1624, 0.408216, -6.76602)
+tasktxt = "Open the dresser"
