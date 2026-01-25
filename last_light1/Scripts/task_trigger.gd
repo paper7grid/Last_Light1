@@ -5,7 +5,7 @@ var triggered = false
 var ui
 
 func _ready():
-	ui = get_tree().current_scene.get_node("proto_controller/player_ui")
+	ui = get_tree().current_scene.get_node("proto_controller")
 
 func enter_trigger(body):
 	if body.name == "proto_controller" and !triggered:

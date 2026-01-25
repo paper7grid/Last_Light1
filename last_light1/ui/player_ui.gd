@@ -7,7 +7,7 @@ func _ready() -> void:
 	$taskui/tasktxt.text = "Pick up the paper and read it"
 	print("Game Started. Current Task ID is: ", current_task_id)
 
-func show_note_ui():
+func show_note():
 	if !$note_open.visible:
 		$note_open.visible = true
 		get_tree().paused = true 
@@ -15,7 +15,7 @@ func show_note_ui():
 func _on_close_note_pressed():
 	$note_open.visible = false
 	get_tree().paused = false
-	Input.set_mouse_mode
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func set_task(tasktxt: String):
 	$taskui/tasktxt.text = tasktxt
@@ -38,7 +38,7 @@ func quit_game():
 	
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and !$note_open.visible:
 		$pause_menu.visible = !$pause_menu.visible
 		get_tree().paused = $pause_menu.visible
 		if get_tree().paused:
