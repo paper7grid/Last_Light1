@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dkax07aji520v"]
+
+[node name="taskui" type="CanvasLayer"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 1106.0
+offset_top = 4.0
+offset_right = 1398.0
+offset_bottom = 108.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Task:"
+
+[node name="tasktxt" type="RichTextLabel" parent="."]
+offset_left = 730.0
+offset_top = 72.0
+offset_right = 1238.0
+offset_bottom = 386.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Sample task the user does"
+horizontal_alignment = 2

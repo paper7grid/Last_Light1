@@ -2,6 +2,7 @@ extends Control
 #  when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$pause_menu.visible = false
+	set_task("Pick up the paper and read it")
 	
 func resume_game():
 	get_tree().paused = false
@@ -11,6 +12,10 @@ func resume_game():
 func quit_game():
 	get_tree().quit()
 	
+func set_task(tasktxt: String):
+	$taskui/tasktxt.text = tasktxt
+	
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		$pause_menu.visible = !$pause_menu.visible
@@ -19,6 +24,7 @@ func _process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if !get_tree().paused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 
 	
