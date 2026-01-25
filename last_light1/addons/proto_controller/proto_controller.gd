@@ -2,7 +2,6 @@
 # CC0 License
 # Intended for rapid prototyping of first-person games.
 # Happy prototyping!
-
 extends CharacterBody3D
 @onready var flashlight: SpotLight3D = $Head/flashlight
 
@@ -44,7 +43,6 @@ extends CharacterBody3D
 @export var input_sprint : String = "sprint"
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
-
 var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
@@ -118,7 +116,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Use velocity to actually move
 	move_and_slide()
-
 
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).

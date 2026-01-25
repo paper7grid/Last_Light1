@@ -244,22 +244,7 @@ shadow_mesh = SubResource("ArrayMesh_a4gh7")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xi0mm"]
 points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4svt"]
-albedo_texture = ExtResource("10_lmwq5")
-
-[sub_resource type="QuadMesh" id="QuadMesh_ttg8n"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmwq5"]
-albedo_color = Color(0.479624, 0, 0.106411, 1)
-albedo_texture = ExtResource("10_lmwq5")
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_x4svt"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h1dt"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.474569, 0.625886, 1, 1)
-albedo_texture = ExtResource("10_lmwq5")
-albedo_texture_force_srgb = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_gslo5"]
 
@@ -271,6 +256,21 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_78jbw"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmwq5"]
+albedo_color = Color(0.479624, 0, 0.106411, 1)
+albedo_texture = ExtResource("10_lmwq5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ttg8n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h1dt"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.474569, 0.625886, 1, 1)
+albedo_texture = ExtResource("10_lmwq5")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4svt"]
+albedo_texture = ExtResource("10_lmwq5")
 
 [node name="house" type="Node3D"]
 
@@ -342,47 +342,47 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house_Meshes/Cube_013/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_xi0mm")
 
-[node name="Lights inside" type="Node3D" parent="."]
+[node name="lightbulb" type="Node3D" parent="."]
 
-[node name="lightbulb" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 11.241, 3.6774, 13.6615)
 
-[node name="lightbulb2" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb2" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -13.3261, 3.6774, 16.4562)
 
-[node name="lightbulb3" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb3" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -13.3261, 3.6774, -8.23315)
 
-[node name="lightbulb4" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb4" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 12.2854, 3.6774, -4.38551)
 
-[node name="lightbulb5" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb5" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 11.9625, 3.6774, -19.8466)
 
-[node name="lightbulb6" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb6" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -11.4166, 3.6774, -19.8466)
 
-[node name="lightbulb7" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb7" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.775074, -6.54761, 15.9654)
 visible = false
 
-[node name="lightbulb8" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb8" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 10.6531, -6.54761, -19.0599)
 
-[node name="lightbulb9" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb9" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.848058, 3.6774, 16.4562)
 
-[node name="lightbulb10" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb10" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.848058, 3.6774, -15.6832)
 
-[node name="lightbulb11" parent="Lights inside" instance=ExtResource("16_tj63m")]
+[node name="lightbulb11" parent="lightbulb" instance=ExtResource("16_tj63m")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -6.29053, -6.54337, -1.88144)
 
 [node name="table" parent="." instance=ExtResource("4_iqtyj")]
 transform = Transform3D(0.345967, 0, 2.41262, 0, 0.167246, 0, -5.63714, 0, 0.148069, -8.80038, -2.0973, 18.7641)
 
 [node name="bookcase" parent="." instance=ExtResource("5_xi0mm")]
-transform = Transform3D(0.013133, 0.00269474, 1.1967, -0.00219541, 1.01082, -0.0031564, -1.0007, -0.00218224, 0.0157124, 12.2991, -2.92111, 26.349)
+transform = Transform3D(0.013133, 0.00269474, 1.1967, -0.00219541, 1.01082, -0.0031564, -1.0007, -0.00218224, 0.0157124, 11.5358, -2.31537, 21.093)
 
 [node name="drawers" parent="." instance=ExtResource("6_bu6dc")]
 transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, -13.5364, -2.33621, -11.3933)
@@ -393,11 +393,16 @@ transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0
 [node name="drawers2" parent="drawers2" instance=ExtResource("6_bu6dc")]
 transform = Transform3D(-0.000698154, 0, 1.00003, 0, 1.00003, 0, -1.00003, 0, -0.000698154, -17.3533, 0.103792, 6.91495)
 
-[node name="couch" parent="." instance=ExtResource("7_l3jqw")]
+[node name="Couch" type="Node3D" parent="."]
+
+[node name="couch" parent="Couch" instance=ExtResource("7_l3jqw")]
 transform = Transform3D(-0.00901403, 0, -3.94922, 0, 3.18948, 0, 2.95125, 0, -0.0120622, 11.566, -4.29789, 4.3561)
 
-[node name="couch2" parent="." instance=ExtResource("7_l3jqw")]
+[node name="couch2" parent="Couch" instance=ExtResource("7_l3jqw")]
 transform = Transform3D(-3.17391, 0, 0.0376579, 0, 3.43024, 0, -0.0281417, 0, -4.24717, 16.2462, -4.31998, 10.1537)
+
+[node name="couch3" parent="Couch" instance=ExtResource("7_l3jqw")]
+transform = Transform3D(0.0791272, 0, 5.31167, 0, 4.29066, 0, -3.96941, 0, 0.105884, -7.80619, -14.6251, 20.0233)
 
 [node name="table2" parent="." instance=ExtResource("4_iqtyj")]
 transform = Transform3D(-5.95148, 0, 0.243056, 0, 0.139688, 0, -0.609671, 0, -2.37266, 14.8827, -2.77478, 18.2446)
@@ -407,21 +412,6 @@ transform = Transform3D(0.0533393, 0, 0.492197, 0, 0.495079, 0, -0.492197, 0, 0.
 
 [node name="vase" parent="." instance=ExtResource("9_7ug6d")]
 transform = Transform3D(2.16821, 0, 0, 0, 2.16821, 0, 0, 0, 2.16821, -8.86065, -2.01852, 18.7462)
-
-[node name="Carpet" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.0428, 0, 0, 0, -6.94303e-07, 6.69146, 0, -15.8838, -2.92493e-07, 13.2085, -4.2389, 11.3244)
-material_override = SubResource("StandardMaterial3D_x4svt")
-mesh = SubResource("QuadMesh_ttg8n")
-
-[node name="Carpet2" type="MeshInstance3D" parent="."]
-transform = Transform3D(8.96154, 0, 0, 0, -5.24748e-07, 5.05735, 0, -12.0048, -2.21064e-07, -9.55356, -4.2389, 17.667)
-material_override = SubResource("StandardMaterial3D_lmwq5")
-mesh = SubResource("QuadMesh_ttg8n")
-
-[node name="Carpet3" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.222, 0, 0, 0, -3.93993e-07, 4.71128, 0, -9.01351, -2.05937e-07, -13.09, -4.2389, -22.8258)
-material_override = SubResource("StandardMaterial3D_x4svt")
-mesh = SubResource("QuadMesh_ttg8n")
 
 [node name="mattress" parent="." instance=ExtResource("11_x4svt")]
 transform = Transform3D(4.4814, 0, 0, 0, 4.4814, 0, 0, 0, 4.4814, -13.1296, -4.29775, -24.2878)
@@ -453,11 +443,6 @@ transform = Transform3D(1.00063, 0.0021698, -0.0212263, -0.00219541, 1.01082, -0
 [node name="mattress2" parent="." instance=ExtResource("11_x4svt")]
 transform = Transform3D(4.41291, 0, 0, 0, 3.61745, 0, 0, 0, 3.51003, 13.3821, -4.31866, -0.136271)
 
-[node name="Carpet4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.228102, -12.6607, -2.92444e-07, 0, -5.53509e-07, 6.69146, -12.4455, -0.232046, -5.35993e-09, 11.8339, -4.2389, -3.4991)
-material_override = SubResource("StandardMaterial3D_0h1dt")
-mesh = SubResource("QuadMesh_ttg8n")
-
 [node name="windows" type="Node3D" parent="."]
 
 [node name="window" parent="windows" instance=ExtResource("14_karln")]
@@ -485,9 +470,6 @@ transform = Transform3D(-0.809225, 0, 1.77389e-07, 0, 1.67632, 0, -7.07447e-08, 
 
 [node name="fridge" parent="." instance=ExtResource("17_4dwi4")]
 transform = Transform3D(2.51675, 0, 0, 0, 2.51675, 0, 0, 0, 2.51675, -17.1831, -4.29894, 15.4089)
-
-[node name="couch3" parent="." instance=ExtResource("7_l3jqw")]
-transform = Transform3D(0.0791272, 0, 5.31167, 0, 4.29066, 0, -3.96941, 0, 0.105884, -7.80619, -14.6251, 20.0233)
 
 [node name="oven" parent="." instance=ExtResource("18_gslo5")]
 transform = Transform3D(0.95442, 0, 0, 0, 0.95442, 0, 0, 0, 0.95442, -16.3541, -2.39672, 11.1395)
@@ -663,11 +645,6 @@ shape = SubResource("ConvexPolygonShape3D_78jbw")
 [node name="drawers3" parent="." instance=ExtResource("6_bu6dc")]
 transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, 7.83572, -13.0229, -25.733)
 
-[node name="Carpet5" type="MeshInstance3D" parent="."]
-transform = Transform3D(8.49857, 0, 0, 0, -5.87544e-07, 5.66255, 0, -13.4414, -2.47518e-07, 8.78909, -14.9169, -21.3334)
-material_override = SubResource("StandardMaterial3D_x4svt")
-mesh = SubResource("QuadMesh_ttg8n")
-
 [node name="bloods" type="Node3D" parent="."]
 
 [node name="blood" parent="bloods" instance=ExtResource("20_36e0i")]
@@ -689,3 +666,35 @@ transform = Transform3D(-0.190673, -0.000864065, 2.0358, 1.40816, 1.4766, 0.1325
 
 [node name="blood6" parent="bloods" instance=ExtResource("21_78jbw")]
 transform = Transform3D(-0.690896, 0.491903, 1.86052, 1.40816, 1.4766, 0.132515, -1.31171, 1.32609, -0.837703, 11.1086, -14.6847, -24.1228)
+
+[node name="Carpets" type="Node3D" parent="."]
+
+[node name="Carpet2" type="MeshInstance3D" parent="Carpets"]
+transform = Transform3D(8.96154, 0, 0, 0, -5.24748e-07, 5.05735, 0, -12.0048, -2.21064e-07, -9.55356, -4.2389, 17.667)
+material_override = SubResource("StandardMaterial3D_lmwq5")
+mesh = SubResource("QuadMesh_ttg8n")
+skeleton = NodePath("../..")
+
+[node name="Carpet4" type="MeshInstance3D" parent="Carpets"]
+transform = Transform3D(0.228102, -12.6607, -2.92444e-07, 0, -5.53509e-07, 6.69146, -12.4455, -0.232046, -5.35994e-09, 11.8339, -4.2389, -3.4991)
+material_override = SubResource("StandardMaterial3D_0h1dt")
+mesh = SubResource("QuadMesh_ttg8n")
+skeleton = NodePath("../..")
+
+[node name="Carpet5" type="MeshInstance3D" parent="Carpets"]
+transform = Transform3D(8.49857, 0, 0, 0, -5.87544e-07, 5.66255, 0, -13.4414, -2.47518e-07, 8.78909, -14.9169, -21.3334)
+material_override = SubResource("StandardMaterial3D_x4svt")
+mesh = SubResource("QuadMesh_ttg8n")
+skeleton = NodePath("../..")
+
+[node name="Carpet" type="MeshInstance3D" parent="Carpets"]
+transform = Transform3D(10.0428, 0, 0, 0, -6.94303e-07, 6.69146, 0, -15.8838, -2.92493e-07, 13.2085, -4.2389, 11.3244)
+material_override = SubResource("StandardMaterial3D_x4svt")
+mesh = SubResource("QuadMesh_ttg8n")
+skeleton = NodePath("../..")
+
+[node name="Carpet3" type="MeshInstance3D" parent="Carpets"]
+transform = Transform3D(10.222, 0, 0, 0, -3.93993e-07, 4.71128, 0, -9.01351, -2.05937e-07, -13.09, -4.2389, -22.8258)
+material_override = SubResource("StandardMaterial3D_x4svt")
+mesh = SubResource("QuadMesh_ttg8n")
+skeleton = NodePath("../..")

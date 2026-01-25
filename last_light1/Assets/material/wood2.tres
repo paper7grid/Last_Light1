@@ -3,5 +3,4 @@
 [ext_resource type="Texture2D" uid="uid://ck2rbstlg80yo" path="res://Assets/material/abstract-background-wall-concept-with-copy-space.jpg" id="1_ic11v"]
 
 [resource]
-albedo_color = Color(0.599199, 0.599199, 0.599199, 1)
 albedo_texture = ExtResource("1_ic11v")

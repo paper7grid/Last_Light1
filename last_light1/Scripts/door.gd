@@ -1,5 +1,4 @@
 extends Node3D
-
 var opened = false
 
 func toggle_door():
@@ -9,5 +8,3 @@ func toggle_door():
 			$AnimationPlayer.play("close")
 		if opened:
 			$AnimationPlayer.play("open")
-	
-	

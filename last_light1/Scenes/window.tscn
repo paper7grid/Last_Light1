@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://bmsoydfvblw7h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ifbo"]
-albedo_color = Color(0.818768, 0.66983, 0.439381, 1)
+albedo_color = Color(0.808686, 0.659252, 0.427551, 1)
 metallic = 0.88
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rn0b"]

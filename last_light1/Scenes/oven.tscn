@@ -381,6 +381,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7qr7b")
 
 [node name="oven" type="Node3D"]
+transform = Transform3D(1.04714, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.64432, 0, 0, 0, 1.44929, 0, 0, 0, 1.84233, 0, -0.378573, 0.00243562)
