@@ -20,21 +20,42 @@ scale = Vector2(0.731675, 0.96)
 color = Color(0.84104, 0.84104, 0.84104, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 322.0
-offset_top = 58.0
-offset_right = 945.0
-offset_bottom = 760.0
+offset_left = 315.0
+offset_top = 83.0
+offset_right = 938.0
+offset_bottom = 785.0
+theme_override_colors/default_color = Color(0.465094, 8.66354e-07, 3.36915e-07, 1)
 theme_override_fonts/normal_font = ExtResource("1_3fmb7")
-theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/normal_font_size = 33
 text = "How sad to see you’ve fallen for my snare,
+
 A little trap for one so unaware.
+
 You’re locked in tight, the walls are in,
+
 Oh don't be blue, the fun’s about to begin!
-I like a chase, I like a little pride,
-Let’s see how long a mouse can run and hide.
+
 If you are wise, you'll solve the path I've spun,
+
 Or stay forever when the clock is done.
+
 The first step's easy, a simple little chore,
 
 Slide back the drawer and look for something more"
+scroll_active = false
 horizontal_alignment = 1
+
+[node name="close" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.762
+anchor_bottom = 0.072
+offset_left = 899.0
+offset_top = 24.0
+offset_right = 1.5
+offset_bottom = 24.28
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.699196, 6.37732e-07, 2.88785e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_3fmb7")
+theme_override_font_sizes/font_size = 40
+text = "X"

@@ -13,11 +13,11 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 script = ExtResource("1_ucs03")
 
 [node name="papernote" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.862204, 0, 0, 0, 0.0225397, 0, 0, 0, 1.22476, 0, 0, 0)
+transform = Transform3D(0.976148, 0, 0, 0, 0.13558, 0, 0, 0, 1.38662, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_1pdcj")
 mesh = SubResource("BoxMesh_ucs03")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="papernote"]
+[node name="note" type="StaticBody3D" parent="papernote"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="papernote/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papernote/note"]
 shape = SubResource("ConvexPolygonShape3D_1pdcj")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cptnkxy7cp8su"]
+[gd_scene load_steps=6 format=3 uid="uid://cptnkxy7cp8su"]
 
 [ext_resource type="Texture2D" uid="uid://bymtociw1k520" path="res://ui/ELR_Corsshairs.png" id="1_cfom6"]
 [ext_resource type="Script" uid="uid://dqbbur0b6jwhl" path="res://ui/player_ui.gd" id="1_ehg4m"]
 [ext_resource type="PackedScene" uid="uid://c05engaaqtirf" path="res://Scenes/pause_menu.tscn" id="2_vq5xy"]
 [ext_resource type="PackedScene" uid="uid://dkax07aji520v" path="res://Scenes/taskui.tscn" id="3_iwa1g"]
+[ext_resource type="PackedScene" uid="uid://clwirg7ip5eqx" path="res://Scenes/note_open.tscn" id="5_lp0io"]
 
 [node name="player_ui" type="Control"]
 process_mode = 3
@@ -31,7 +32,11 @@ texture = ExtResource("1_cfom6")
 
 [node name="pause_menu" parent="." instance=ExtResource("2_vq5xy")]
 
+[node name="note_open" parent="." instance=ExtResource("5_lp0io")]
+
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
+[connection signal="pressed" from="note_open/close" to="." method="_on_close_note_pressed"]
 
 [editable path="pause_menu"]
+[editable path="note_open"]

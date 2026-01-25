@@ -6,11 +6,13 @@ func _physics_process(_delta: float) -> void:
 		var ui = get_tree().current_scene.get_node("proto_controller/player_ui")
 
 		if hit.name == "note":
-			crosshair.visible = true
+			if !crosshair.visible:
+				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				ui.advance_task(1, "Clue found! Now open the drawer.")
+				ui.show_note_ui()
+				ui.advance_task(1, "Check the drawer in the room for a clue.")
 				hit.queue_free()
-		if hit.name == "door":
+		elif hit.name == "door":
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):

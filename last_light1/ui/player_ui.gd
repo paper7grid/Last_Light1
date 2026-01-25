@@ -3,10 +3,19 @@ var current_task_id: int = 1
 #  when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$pause_menu.visible = false
-	set_task("Pick up the paper and read it")
+	$note_open.visible = false
 	$taskui/tasktxt.text = "Pick up the paper and read it"
 	print("Game Started. Current Task ID is: ", current_task_id)
 
+func show_note_ui():
+	if !$note_open.visible:
+		$note_open.visible = true
+		get_tree().paused = true 
+	
+func _on_close_note_pressed():
+	$note_open.visible = false
+	get_tree().paused = false
+	Input.set_mouse_mode
 	
 func set_task(tasktxt: String):
 	$taskui/tasktxt.text = tasktxt

@@ -389,7 +389,7 @@ transform = Transform3D(0.013133, 0.00269474, 1.1967, -0.00219541, 1.01082, -0.0
 transform = Transform3D(1.00003, 0, 0, 0, 1.00003, 0, 0, 0, 1.00003, -13.5364, -2.33621, -11.3933)
 
 [node name="drawers2" parent="." groups=["firstd"] instance=ExtResource("6_bu6dc")]
-transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0149399, 17.0055, -2.45041, -8.77961)
+transform = Transform3D(0.0149399, 0, -0.999918, 0, 1.00003, 0, 0.999918, 0, 0.0149399, 16.9961, -2.49918, -8.77575)
 
 [node name="drawers2" parent="drawers2" instance=ExtResource("6_bu6dc")]
 transform = Transform3D(-0.000698154, 0, 1.00003, 0, 1.00003, 0, -1.00003, 0, -0.000698154, -17.3533, 0.103792, 6.91495)
@@ -501,7 +501,7 @@ skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/Do
 shape = SubResource("ConvexPolygonShape3D_36e0i")
 
 [node name="Box3" type="MeshInstance3D" parent="Boxes"]
-transform = Transform3D(1.69844, 0, 0, 0, 1.69844, 0, 0, 0, 1.69844, 7.51102, -1.70795, -11.4303)
+transform = Transform3D(1.69844, 0, 0, 0, 1.69844, 0, 0, 0, 1.69844, 6.79495, -1.70795, -11.4303)
 material_override = ExtResource("19_a7v5j")
 mesh = SubResource("BoxMesh_gslo5")
 skeleton = NodePath("../../root/@EditorNode@21282/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/house")
@@ -701,4 +701,4 @@ mesh = SubResource("QuadMesh_ttg8n")
 skeleton = NodePath("../..")
 
 [node name="note" parent="." instance=ExtResource("22_218mn")]
-transform = Transform3D(0.557368, 0, 0.830265, 0, 1, 0, -0.830265, 0, 0.557368, 8.26406, -4.19718, -1.92002)
+transform = Transform3D(0.615182, 0, 0.916386, 0, 1.10373, 0, -0.916386, 0, 0.615182, 8.5859, -2.4511, -11.2806)

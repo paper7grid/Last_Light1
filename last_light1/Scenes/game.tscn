@@ -87,7 +87,7 @@ transform = Transform3D(1.53009, 0, 0.0967664, 0, 1.54339, 0, -0.077538, 0, 1.90
 transform = Transform3D(-0.160289, 0, 2.13592, 0, 1.54339, 0, -1.51512, 0, -0.225964, -13.1557, -0.172991, 6.56754)
 
 [node name="notep" parent="." instance=ExtResource("6_i6g32")]
-transform = Transform3D(1.38809, 0, 0, 0, 1.38809, 0, 0, 0, 1.38809, -24.1649, -0.433687, -4.76309)
+transform = Transform3D(1.38809, 0, 0, 0, 1.38809, 0, 0, 0, 1.38809, -28.3989, -0.433687, -4.18634)
 trigger_id = 1
 
 [node name="drawerroom" parent="." groups=["firstd"] instance=ExtResource("6_i6g32")]
