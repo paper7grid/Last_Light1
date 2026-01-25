@@ -1,31 +1,49 @@
 extends RayCast3D
+
+@onready var player_ui = get_parent().get_parent().get_node("player_ui")
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
-@onready var note_open =  get_parent().get_node("player_ui/note_open")
-@onready var player_ui = get_node("player_ui")
+
+func _ready():
+	# Debug prints to check if nodes are found
+	print("RayCast3D ready!")
+	print("player_ui found: ", player_ui != null)
+	print("crosshair found: ", crosshair != null)
+
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
-		#var ui = get_tree().current_scene.get_node("proto_controller/player_ui")
-
+		 # Debug: 
+		
 		if hit.name == "note":
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				player_ui.show_note()
-				# ui.advance_task(1, "Check the drawer in the room for a clue.")
-				#hit.queue_free()
+				print("Interact pressed on note!")  # Debug
+				if player_ui.current_task_id == 1:
+					player_ui.show_note()
+					player_ui.advance_task(1, "Check the drawer in the bedroom for a clue")
+				else:
+					player_ui.show_note()
+					
 		elif hit.name == "door":
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hit.get_parent().get_parent().get_parent().toggle_door()
+					
 		elif hit.name == "drawer":
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hit.get_parent().get_parent().toggle_door()
+				
+				var drawer_parent = hit.get_parent().get_parent()
+				var note_inside = drawer_parent.get_node_or_null("note")
 				if hit.is_in_group("firstd") and player_ui.current_task_id == 2:
-					player_ui.advance_task(2, "Great! You found the clue. Now go to the kitchen.")
+					if note_inside != null:
+						note_inside.visible = true
+					player_ui.advance_task(2, "Great! You found the clue. Now go to the clue.")
+					
 		else: 
 			if crosshair.visible:
 				crosshair.visible = false
