@@ -25,7 +25,7 @@ func _ready() -> void:
 	update_timer_display()
 	
 
-func show_note():
+func show_note(s):
 	print("show_note() called!")  # Debug
 	if !$note_open.visible:
 		$note_open.visible = true

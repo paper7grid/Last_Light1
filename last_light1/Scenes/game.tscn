@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxx318rchuooe"]
+[gd_scene load_steps=16 format=3 uid="uid://dxx318rchuooe"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://q0mj6pni7aje" path="res://Scenes/world_environment.gd" id="1_qxrlw"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://myqls52h33ed" path="res://Scenes/stairs.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dk2tlkgit6gla" path="res://Assets/material/chair.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dd4dtlnc1qf26" path="res://Scenes/task_trigger.tscn" id="6_i6g32"]
+[ext_resource type="AudioStream" uid="uid://b1kxlq0ptvsyq" path="res://Assets/Textures/Unspeakable.mp3" id="7_1l0tm"]
+[ext_resource type="AudioStream" uid="uid://chjhbph030g4f" path="res://Assets/Textures/creaky-old-door-472357.mp3" id="8_v158k"]
+[ext_resource type="AudioStream" uid="uid://2n6f2isalqul" path="res://Assets/Textures/drawer-open-98801.mp3" id="9_h4fw4"]
 
 [sub_resource type="Gradient" id="Gradient_wowpa"]
 offsets = PackedFloat32Array(0, 0.990566, 1)
@@ -93,3 +96,12 @@ trigger_id = 1
 [node name="drawerroom" parent="." groups=["firstd"] instance=ExtResource("6_i6g32")]
 transform = Transform3D(1.58729, 0, 0, 0, 1.58729, 0, 0, 0, 1.58729, -27.1624, 0.408216, -6.76602)
 trigger_id = 2
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1l0tm")
+
+[node name="door_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_v158k")
+
+[node name="drawer_opend" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_h4fw4")
