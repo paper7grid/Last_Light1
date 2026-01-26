@@ -322,6 +322,46 @@ theme_override_fonts/font = ExtResource("12_fynll")
 theme_override_font_sizes/font_size = 110
 text = "BACK"
 
+[node name="locked_mes" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="locked_mes"]
+offset_left = 411.0
+offset_top = 29.0
+offset_right = 1345.0
+offset_bottom = 1066.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="locked_mes"]
+offset_left = 486.0
+offset_top = 73.0
+offset_right = 1302.0
+offset_bottom = 1034.0
+theme_override_colors/default_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("12_fynll")
+theme_override_font_sizes/normal_font_size = 70
+text = "Nope  don't think you can cheat so easily!
+This is locked until you complete the previous tasks. 
+Remember I am always watching"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="close" type="Button" parent="locked_mes"]
+anchors_preset = -1
+anchor_right = 0.762
+anchor_bottom = 0.072
+offset_left = 1130.0
+offset_top = 34.0
+offset_right = 232.74
+offset_bottom = 34.28
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.387, 0.903)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.699196, 6.37732e-07, 2.88785e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_fynll")
+theme_override_font_sizes/font_size = 60
+text = "X"
+
 [connection signal="pressed" from="lock_ui/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="lock_ui/Button2" to="." method="check_passcode"]
 [connection signal="pressed" from="note_open/close" to="." method="_on_close_note_pressed"]
@@ -333,6 +373,7 @@ text = "BACK"
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="wrong/Button" to="." method="exit_lock"]
+[connection signal="pressed" from="locked_mes/close" to="." method="_on_close_note_pressed"]
 
 [editable path="lock_ui"]
 [editable path="note_open"]

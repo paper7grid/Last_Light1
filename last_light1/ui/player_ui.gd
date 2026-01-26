@@ -9,6 +9,7 @@ var entered_passcode: String = ""
 func _ready() -> void:
 	print("player_ui ready!")
 	$pause_menu.visible = false
+	$locked_mes.visible - false
 	$wrong.visible = false
 	$note_open.visible = false
 	$win_screen.visible = false
@@ -96,6 +97,11 @@ func update_timer_display():
 	if $taskui.has_node("timer"):
 		$taskui.get_node("timer").text = "%02d:%02d" % [minutes, seconds]
 		
+func locked_message():
+	$locked_mes.visible = true
+	get_tree().paused 
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 func open_lock():
 	$lock_ui.visible = true
 	get_tree().paused

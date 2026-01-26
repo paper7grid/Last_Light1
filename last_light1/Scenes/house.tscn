@@ -462,7 +462,7 @@ transform = Transform3D(0.753891, 0, 0, 0, 1.01566, 0, 0, 0, 0.855871, -18.9429,
 
 [node name="Door" type="Node3D" parent="."]
 
-[node name="Door" parent="Door" instance=ExtResource("15_j14gn")]
+[node name="Door" parent="Door" groups=["maindoor"] instance=ExtResource("15_j14gn")]
 transform = Transform3D(0.0496087, 0, -2.02658, 0, 1.94899, 0, 0.955525, 0, 0.105216, 6.47596, -2.56919, 27.6641)
 
 [node name="Door2" parent="Door" instance=ExtResource("15_j14gn")]
@@ -706,7 +706,7 @@ mesh = SubResource("QuadMesh_ttg8n")
 skeleton = NodePath("../..")
 
 [node name="note" parent="." instance=ExtResource("22_218mn")]
-transform = Transform3D(0.615182, 0, 0.916386, 0, 1.10373, 0, -0.916386, 0, 0.615182, 8.5859, -2.4511, -11.2806)
+transform = Transform3D(0.615182, 0, 0.916386, 0, 1.10373, 0, -0.916386, 0, 0.615182, 7.41737, -4.13378, -4.07886)
 
 [node name="note2" parent="." instance=ExtResource("23_cx658")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1017, -1.19633, 20.8811)
