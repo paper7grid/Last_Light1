@@ -1,6 +1,9 @@
 extends Control
 
 var current_task_id: int = 1  
+var time_remaining: float = 900.0  # 15 minutes about? 
+var game_over: bool = false
+
 
 func _ready() -> void:
 	print("player_ui ready!")
@@ -13,6 +16,8 @@ func _ready() -> void:
 	$lock_ui.visible = false
 	$taskui/tasktxt.text = "Find and read the mysterious paper"
 	print("Current Task ID: ", current_task_id)
+	update_timer_display()
+	
 
 func show_note():
 	print("show_note() called!")  # Debug
@@ -79,6 +84,13 @@ func advance_task(id: int, next_task_text: String):
 		set_task(next_task_text)
 		current_task_id += 1
 		print("Task Advanced to: ", current_task_id)
+		
+func update_timer_display():
+	var minutes = int(time_remaining) / 60
+	var seconds = int(time_remaining) % 60
+	# Update 
+	if $taskui.has_node("timer"):
+		$taskui.get_node("timer").text = "%02d:%02d" % [minutes, seconds]
 		
 func open_lock():
 	$lock_ui.visible = true
