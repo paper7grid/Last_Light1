@@ -86,4 +86,3 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if crosshair.visible:
 			crosshair.visible = false
-		
