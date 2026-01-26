@@ -9,6 +9,7 @@ func _ready() -> void:
 	print("player_ui ready!")
 	$pause_menu.visible = false
 	$note_open.visible = false
+	$game_over_screen.visible = false
 	$note_open2.visible = false 
 	$note_open3.visible = false
 	$note_open4.visible = false
@@ -102,7 +103,21 @@ func exit_lock():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-
+func game_over_lose():
+	game_over = true
+	get_tree().paused = true
+	if has_node("game_over_screen"):
+		$game_over_screen.visible = true
+	set_task("TIME'S UP! The killer found you...")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+func game_over_win():
+	game_over = true
+	get_tree().paused = true
+	if has_node("win_screen"):
+		$win_screen.visible = true
+	set_task("YAY")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func resume_game():
 	get_tree().paused = false
@@ -111,9 +126,18 @@ func resume_game():
 	
 func quit_game():
 	get_tree().quit()
+	
+func play_again():
+	get_tree().reload_current_scene()
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	# Timer countdown
+	if !game_over and !get_tree().paused:
+		time_remaining -= delta
+		update_timer_display()
+		if time_remaining <= 0:
+			game_over_lose()
 	if Input.is_action_just_pressed("pause") and !$note_open.visible:
 		$pause_menu.visible = !$pause_menu.visible
 		get_tree().paused = $pause_menu.visible
