@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=63 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/furniture assets/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -278,6 +278,11 @@ albedo_texture_force_srgb = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4svt"]
 albedo_texture = ExtResource("10_lmwq5")
 
+[sub_resource type="BoxMesh" id="BoxMesh_qabsv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qabsv"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="house" type="Node3D"]
 
 [node name="house_Meshes" type="Node3D" parent="."]
@@ -461,9 +466,6 @@ transform = Transform3D(1, 0, 0, 0, 1.43073, 0, 0, 0, 1.20613, 18.7873, -0.284, 
 transform = Transform3D(0.753891, 0, 0, 0, 1.01566, 0, 0, 0, 0.855871, -18.9429, 2.10941, 8.09865)
 
 [node name="Door" type="Node3D" parent="."]
-
-[node name="Door" parent="Door" groups=["maindoor"] instance=ExtResource("15_j14gn")]
-transform = Transform3D(0.0496087, 0, -2.02658, 0, 1.94899, 0, 0.955525, 0, 0.105216, 6.47596, -2.56919, 27.6641)
 
 [node name="Door2" parent="Door" instance=ExtResource("15_j14gn")]
 transform = Transform3D(0.00477603, 0, -2.02928, 0, 1.94899, 0, 0.9568, 0, 0.01013, 6.46402, -1.52951, 2.89173)
@@ -721,4 +723,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77327, -2.46587, -25.6287)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.85988, -13.2273, -25.3443)
 
 [node name="lock" parent="." instance=ExtResource("27_qabsv")]
-transform = Transform3D(-7.10227e-09, 0, 0.162481, 0, 0.162481, 0, -0.162481, 0, -7.10227e-09, 7.53318, -1.74517, 27.472)
+transform = Transform3D(-8.22543e-09, 0, 0.188176, 0, 0.188176, 0, -0.188176, 0, -8.22543e-09, 7.53318, -1.74517, 27.472)
+
+[node name="fakedoor" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.80431, 0, 0, 0, 6.03416, 0, 0, 0, 0.299969, 6.44075, -2.20579, 27.6266)
+material_override = ExtResource("19_a7v5j")
+mesh = SubResource("BoxMesh_qabsv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fakedoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fakedoor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qabsv")

@@ -62,12 +62,9 @@ func _physics_process(_delta: float) -> void:
 				elif player_ui.current_task_id < 4:
 					player_ui.locked_message()
 					player_ui.set_task("This is locked. Complete previous tasks!")
-
-					
 		elif hit.name == "note5":
 			if crosshair != null and !crosshair.visible:
 				crosshair.visible = true
-				
 			if Input.is_action_just_pressed("interact"):
 				if player_ui.current_task_id == 5:
 					player_ui.show_note5()
@@ -85,11 +82,13 @@ func _physics_process(_delta: float) -> void:
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				if hit.is_in_group("maindoor"):
+				if hit.is_in_group("main_door"):
+					print(">>> This IS the main door")  # DEBUG
 					if player_ui.current_task_id >= 5:
-						player_ui.open_lock()
-					else:
-						player_ui.set_task("The door is locked. Find a way to escape!")
+						crosshair.visible = true
+						if Input.is_action_just_pressed("interact"):
+							print("Opening passcode panel")
+							player_ui.show_passcode_entry()
 				else: 
 					hit.get_parent().get_parent().get_parent().toggle_door()
 				
@@ -111,5 +110,3 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if crosshair.visible:
 			crosshair.visible = false
-			
-			

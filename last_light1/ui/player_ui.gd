@@ -7,7 +7,7 @@ var correct_passcode: String = "7542"
 var entered_passcode: String = ""
 
 func _ready() -> void:
-	print("player_ui ready!")
+	
 	$pause_menu.visible = false
 	$locked_mes.visible = false
 	$wrong.visible = false
