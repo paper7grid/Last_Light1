@@ -9,6 +9,7 @@ var entered_passcode: String = ""
 func _ready() -> void:
 	print("player_ui ready!")
 	$pause_menu.visible = false
+	$wrong.visible = false
 	$note_open.visible = false
 	$win_screen.visible = false
 	$game_over_screen.visible = false
@@ -102,6 +103,7 @@ func open_lock():
 	
 func exit_lock():
 	$lock_ui.visible = false
+	$wrong.visible = false
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func game_over_lose():
@@ -130,7 +132,24 @@ func quit_game():
 func play_again():
 	get_tree().reload_current_scene()
 	
-func lock_ui
+func show_passcode_entry():
+	if has_node("lock_ui"):
+		$lock_ui.visible = true
+		$lock_ui/passcode_input.text = ""
+		entered_passcode = ""
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+func check_passcode():
+	entered_passcode = $lock_ui/passcode_input.text
+	if entered_passcode == correct_passcode:
+		print("Correct passcode!")
+		$lock_ui.visible = false
+		
+		game_over_win()
+	else: 
+			print("Wrong passcode!")
+			$wrong.visible = true
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	# Timer countdown

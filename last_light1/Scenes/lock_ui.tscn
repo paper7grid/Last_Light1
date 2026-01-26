@@ -11,7 +11,7 @@ offset_right = 1778.0
 offset_bottom = 1078.0
 color = Color(0.996078, 0.996078, 0.996078, 0.352941)
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="passcode_input" type="LineEdit" parent="."]
 offset_left = 593.0
 offset_top = 484.0
 offset_right = 1334.0
