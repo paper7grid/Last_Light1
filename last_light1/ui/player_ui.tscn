@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cptnkxy7cp8su"]
+[gd_scene load_steps=14 format=3 uid="uid://cptnkxy7cp8su"]
 
 [ext_resource type="Texture2D" uid="uid://bymtociw1k520" path="res://ui/ELR_Corsshairs.png" id="1_cfom6"]
 [ext_resource type="Script" uid="uid://dqbbur0b6jwhl" path="res://ui/player_ui.gd" id="1_ehg4m"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cck6xlh2yl1kf" path="res://Scenes/note_open5.tscn" id="9_g1ro4"]
 [ext_resource type="FontFile" uid="uid://dw7qlpf7wqxaj" path="res://HelpMe.ttf" id="11_1wie7"]
 [ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/ChainsawCarnage.ttf" id="12_fynll"]
+[ext_resource type="PackedScene" uid="uid://5burktlh5wub" path="res://Scenes/control_ui.tscn" id="13_obao7"]
 
 [node name="player_ui" type="Control"]
 process_mode = 3
@@ -362,6 +363,12 @@ theme_override_fonts/font = ExtResource("12_fynll")
 theme_override_font_sizes/font_size = 60
 text = "X"
 
+[node name="control_ui" parent="." instance=ExtResource("13_obao7")]
+
+[node name="ColorRect" parent="control_ui" index="0"]
+offset_left = 631.0
+offset_bottom = 1092.0
+
 [connection signal="pressed" from="lock_ui/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="lock_ui/Button2" to="." method="check_passcode"]
 [connection signal="pressed" from="note_open/close" to="." method="_on_close_note_pressed"]
@@ -371,6 +378,7 @@ text = "X"
 [connection signal="pressed" from="note_open5/close" to="." method="_on_close_note5_pressed"]
 [connection signal="pressed" from="win_screen/quitg" to="." method="quit_game"]
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
+[connection signal="pressed" from="pause_menu/control" to="." method="control_settings"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="wrong/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="locked_mes/close" to="." method="close_locked_message"]
@@ -382,3 +390,4 @@ text = "X"
 [editable path="note_open4"]
 [editable path="note_open5"]
 [editable path="pause_menu"]
+[editable path="control_ui"]

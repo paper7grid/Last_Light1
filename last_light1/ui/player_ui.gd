@@ -11,6 +11,7 @@ func _ready() -> void:
 	$pause_menu.visible = false
 	$locked_mes.visible = false
 	$wrong.visible = false
+	$control_ui.visible = false
 	$note_open.visible = false
 	$win_screen.visible = false
 	$game_over_screen.visible = false
@@ -135,10 +136,17 @@ func game_over_win():
 func resume_game():
 	get_tree().paused = false
 	$pause_menu.visible = false
+	if has_node("control_ui"):
+		$control_ui.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func quit_game():
 	get_tree().quit()
+
+func control_settings():
+	if has_node("control_ui"):
+		$control_ui.visible = true
+
 	
 func play_again():
 	get_tree().reload_current_scene()

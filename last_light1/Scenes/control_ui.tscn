@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://5burktlh5wub"]
+
+[ext_resource type="FontFile" uid="uid://be0ajaxknc1i7" path="res://Assets/Textures/vinivicious.ttf" id="1_1qgno"]
+
+[node name="control_ui" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 710.0
+offset_top = 6.0
+offset_right = 1834.0
+offset_bottom = 1110.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 862.0
+offset_top = 62.0
+offset_right = 1758.0
+offset_bottom = 336.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_1qgno")
+theme_override_font_sizes/normal_font_size = 120
+text = "Control Buttons
+______________"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 848.0
+offset_top = 410.0
+offset_right = 1782.0
+offset_bottom = 1134.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_1qgno")
+theme_override_font_sizes/normal_font_size = 80
+text = "P  - to pause/unpause
+E - to interact (pickup or open)
+F - Flashlight
+Space - to jump 
+Arrow keys to move "
+scroll_active = false
