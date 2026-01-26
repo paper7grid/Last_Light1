@@ -10,6 +10,7 @@ func _ready() -> void:
 	$note_open3.visible = false
 	$note_open4.visible = false
 	$note_open5.visible = false
+	$lock_ui.visible = false
 	$taskui/tasktxt.text = "Find and read the mysterious paper"
 	print("Current Task ID: ", current_task_id)
 
@@ -78,6 +79,18 @@ func advance_task(id: int, next_task_text: String):
 		set_task(next_task_text)
 		current_task_id += 1
 		print("Task Advanced to: ", current_task_id)
+		
+func open_lock():
+	$lock_ui.visible = true
+	get_tree().paused
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+func exit_lock():
+	$lock_ui.visible = false
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+
 
 func resume_game():
 	get_tree().paused = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cptnkxy7cp8su"]
+[gd_scene load_steps=11 format=3 uid="uid://cptnkxy7cp8su"]
 
 [ext_resource type="Texture2D" uid="uid://bymtociw1k520" path="res://ui/ELR_Corsshairs.png" id="1_cfom6"]
 [ext_resource type="Script" uid="uid://dqbbur0b6jwhl" path="res://ui/player_ui.gd" id="1_ehg4m"]
 [ext_resource type="PackedScene" uid="uid://c05engaaqtirf" path="res://Scenes/pause_menu.tscn" id="2_vq5xy"]
 [ext_resource type="PackedScene" uid="uid://dkax07aji520v" path="res://Scenes/taskui.tscn" id="3_iwa1g"]
+[ext_resource type="PackedScene" uid="uid://nq1nqbep82ti" path="res://Scenes/lock_ui.tscn" id="4_b6i2q"]
 [ext_resource type="PackedScene" uid="uid://clwirg7ip5eqx" path="res://Scenes/note_open.tscn" id="5_lp0io"]
 [ext_resource type="PackedScene" uid="uid://dow3a452e0vgi" path="res://Scenes/note_open2.tscn" id="6_ykvpg"]
 [ext_resource type="PackedScene" uid="uid://c3d05agkvqhdm" path="res://Scenes/note_open3.tscn" id="7_hff70"]
@@ -43,6 +44,11 @@ layout_mode = 2
 texture = ExtResource("1_cfom6")
 
 [node name="taskui" parent="." instance=ExtResource("3_iwa1g")]
+
+[node name="lock_ui" parent="." instance=ExtResource("4_b6i2q")]
+
+[node name="RichTextLabel" parent="lock_ui" index="3"]
+anchors_preset = 0
 
 [node name="pause_menu" parent="." instance=ExtResource("2_vq5xy")]
 
@@ -215,6 +221,7 @@ offset_bottom = 39.28
 scale = Vector2(0.361875, 1)
 theme_override_font_sizes/font_size = 60
 
+[connection signal="pressed" from="lock_ui/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="note_open/close" to="." method="_on_close_note_pressed"]
@@ -223,6 +230,7 @@ theme_override_font_sizes/font_size = 60
 [connection signal="pressed" from="note_open4/close" to="." method="_on_close_note4_pressed"]
 [connection signal="pressed" from="note_open5/close" to="." method="_on_close_note5_pressed"]
 
+[editable path="lock_ui"]
 [editable path="pause_menu"]
 [editable path="note_open"]
 [editable path="note_open2"]

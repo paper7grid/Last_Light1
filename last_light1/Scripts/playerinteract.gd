@@ -12,8 +12,16 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
-		 # Debug: 
-		if hit.name == "note":
+		 # Debug:
+		if hit.name == "lock":
+			if  !crosshair.visible:
+				crosshair.visible = true
+			if Input.is_action_just_pressed("interact"):
+				player_ui.open_lock()
+				
+				
+				
+		elif hit.name == "note":
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):

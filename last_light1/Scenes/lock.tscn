@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://d3rq04xg4jypr"]
+[gd_scene load_steps=38 format=4 uid="uid://d3rq04xg4jypr"]
 
 [ext_resource type="Material" uid="uid://caukjaqiq1wvd" path="res://Assets/material/metal.tres" id="1_dhfgy"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_g4ve3"]
@@ -41,6 +41,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xw83c")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dhfgy"]
+points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1oy2"]
 resource_name = "Material.001"
@@ -429,6 +432,11 @@ transform = Transform3D(0.605041, 0, 0, 0, 2.12217, 0, 0, 0, 1.72259, 0, 0, 0)
 material_override = ExtResource("1_dhfgy")
 mesh = SubResource("ArrayMesh_dka23")
 skeleton = NodePath("")
+
+[node name="lock" type="StaticBody3D" parent="Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/lock"]
+shape = SubResource("ConvexPolygonShape3D_dhfgy")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.405142, 0, 0, 0, 0.405142, 0, 0, 0, 0.405142, 0.365172, 0.523772, 1.12202)
