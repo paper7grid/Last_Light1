@@ -3,7 +3,8 @@ extends Control
 var current_task_id: int = 1  
 var time_remaining: float = 900.0  # 15 minutes about? 
 var game_over: bool = false
-
+var correct_passcode: String = "7542"
+var entered_passcode: String = ""
 
 func _ready() -> void:
 	print("player_ui ready!")
@@ -103,7 +104,6 @@ func exit_lock():
 	$lock_ui.visible = false
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 func game_over_lose():
 	game_over = true
 	get_tree().paused = true
@@ -111,7 +111,6 @@ func game_over_lose():
 		$game_over_screen.visible = true
 	set_task("TIME'S UP! The killer found you...")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
 func game_over_win():
 	game_over = true
 	get_tree().paused = true
@@ -130,7 +129,8 @@ func quit_game():
 	
 func play_again():
 	get_tree().reload_current_scene()
-
+	
+func lock_ui
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	# Timer countdown

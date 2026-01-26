@@ -1,14 +1,11 @@
 extends RayCast3D
-
 @onready var player_ui = get_parent().get_parent().get_node("player_ui")
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
-
 func _ready():
 	# Debug prints to check if nodes are found
 	print("RayCast3D ready!")
 	print("player_ui found: ", player_ui != null)
 	print("crosshair found: ", crosshair != null)
-	
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
@@ -18,9 +15,7 @@ func _physics_process(_delta: float) -> void:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				player_ui.open_lock()
-				
-				
-				
+		
 		elif hit.name == "note":
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -39,11 +34,10 @@ func _physics_process(_delta: float) -> void:
 				player_ui.show_note2()  #  note_open2
 				if player_ui.current_task_id == 2:
 					player_ui.advance_task(2, "Search for the second clue")
-	
 		elif hit.name == "note3":
 			if crosshair != null and !crosshair.visible:
 				crosshair.visible = true
-				
+		
 			if Input.is_action_just_pressed("interact"):
 				player_ui.show_note3()  #  note_open3
 				if player_ui.current_task_id == 3:
@@ -75,7 +69,7 @@ func _physics_process(_delta: float) -> void:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hit.get_parent().get_parent().get_parent().toggle_door()
-					
+				
 		elif hit.name == "drawer":
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -94,3 +88,5 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if crosshair.visible:
 			crosshair.visible = false
+			
+			
