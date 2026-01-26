@@ -9,6 +9,7 @@ func _ready() -> void:
 	print("player_ui ready!")
 	$pause_menu.visible = false
 	$note_open.visible = false
+	$win_screen.visible = false
 	$game_over_screen.visible = false
 	$note_open2.visible = false 
 	$note_open3.visible = false
