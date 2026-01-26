@@ -7,6 +7,7 @@ func _ready() -> void:
 	$pause_menu.visible = false
 	$note_open.visible = false
 	$note_open2.visible = false 
+	$note_open3.visible = false
 	$taskui/tasktxt.text = "Find and read the mysterious paper"
 	print("Current Task ID: ", current_task_id)
 
@@ -23,7 +24,11 @@ func show_note2():
 		$note_open2.visible = true
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+func show_note3():
+	if !$note_open3.visible:
+		$note_open3.visible = true
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)	
 func _on_close_note_pressed():
 	print("Closing note")  # Debug
 	$note_open.visible = false
@@ -33,6 +38,11 @@ func _on_close_note_pressed():
 func _on_close_note2_pressed():
 	print("Closing note 2")
 	$note_open2.visible = false
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func _on_close_note3_pressed():
+	$note_open3.visible = false
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	

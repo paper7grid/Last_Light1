@@ -30,8 +30,16 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				player_ui.show_note2()  #  note_open2
 				if player_ui.current_task_id == 2:
-					player_ui.advance_task(2, "Search for the third clue")
+					player_ui.advance_task(2, "Search for the second clue")
 	
+		elif hit.name == "note3":
+			if crosshair != null and !crosshair.visible:
+				crosshair.visible = true
+				
+			if Input.is_action_just_pressed("interact"):
+				player_ui.show_note3()  #  note_open3
+				if player_ui.current_task_id == 3:
+					player_ui.advance_task(3, "Search for the third clue!")
 		elif hit.is_in_group("oven"):
 			if !crosshair.visible:
 				crosshair.visible = true
