@@ -1,5 +1,9 @@
 extends RayCast3D
 @onready var player_ui = get_parent().get_parent().get_node("player_ui")
+@onready var door_s = get_tree().current_scene.get_node_or_null("door_sound")
+@onready var drawer_s = get_tree().current_scene.get_node_or_null("drawer_opend")
+@onready var note_sound = get_tree().current_scene.get_node_or_null("paper_note")
+@onready var foot_sound = get_tree().current_scene.get_node_or_null("footsteps")
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
 func _ready():
 	# Debug prints to check if nodes are found
@@ -20,7 +24,8 @@ func _physics_process(_delta: float) -> void:
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				print("Interact pressed on note!")  # Debug
+				if note_sound:
+					note_sound.play()
 				if player_ui.current_task_id == 1:
 					player_ui.show_note()
 					player_ui.advance_task(1, "Check the drawer in the bedroom for a clue")
@@ -31,47 +36,52 @@ func _physics_process(_delta: float) -> void:
 				crosshair.visible = true
 				
 			if Input.is_action_just_pressed("interact"):
-				  #  note_open2
-				if player_ui.current_task_id == 2:
-					player_ui.show_note2()
-					player_ui.advance_task(2, "Search for the second clue")
-				elif player_ui.current_task_id < 2:
-					player_ui.locked_message()
-					player_ui.set_task("Complete the current task first!")
+				if note_sound:
+					note_sound.play()
+					if player_ui.current_task_id == 2:
+						player_ui.show_note2()
+						player_ui.advance_task(2, "Search for the second clue")
+					elif player_ui.current_task_id < 2:
+						player_ui.locked_message()
+						player_ui.set_task("Complete the current task first!")
 				
 		elif hit.name == "note3":
 			if crosshair != null and !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				 #  note_open3
-				if player_ui.current_task_id == 3:
-					player_ui.show_note3() 
-					player_ui.advance_task(3, "Search for the third clue!")
-				elif player_ui.current_task_id < 3:
-					player_ui.locked_message()
-					player_ui.set_task("This is locked. Complete previous tasks!")
+				if note_sound:
+					note_sound.play()
+					if player_ui.current_task_id == 3:
+						player_ui.show_note3() 
+						player_ui.advance_task(3, "Search for the third clue!")
+					elif player_ui.current_task_id < 3:
+						player_ui.locked_message()
+						player_ui.set_task("This is locked. Complete previous tasks!")
 		elif hit.name == "note4":
 			if crosshair != null and !crosshair.visible:
 				crosshair.visible = true
 				
 			if Input.is_action_just_pressed("interact"):
-				  #  note_open3
-				if player_ui.current_task_id == 4:
-					player_ui.show_note4()
-					player_ui.advance_task(4, "Almost there, follow your gut")
-				elif player_ui.current_task_id < 4:
-					player_ui.locked_message()
-					player_ui.set_task("This is locked. Complete previous tasks!")
+				if note_sound:
+					note_sound.play()
+					if player_ui.current_task_id == 4:
+						player_ui.show_note4()
+						player_ui.advance_task(4, "Almost there, follow your gut")
+					elif player_ui.current_task_id < 4:
+						player_ui.locked_message()
+						player_ui.set_task("This is locked. Complete previous tasks!")
 		elif hit.name == "note5":
 			if crosshair != null and !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				if player_ui.current_task_id == 5:
-					player_ui.show_note5()
-					player_ui.advance_task(5, "Use the passcode to unclock the door and escape")
-				elif player_ui.current_task_id < 5:
-					player_ui.locked_message()
-					player_ui.set_task("This is locked. Complete previous tasks!")
+				if note_sound:
+					note_sound.play()
+					if player_ui.current_task_id == 5:
+						player_ui.show_note5()
+						player_ui.advance_task(5, "Use the passcode to unclock the door and escape")
+					elif player_ui.current_task_id < 5:
+						player_ui.locked_message()
+						player_ui.set_task("This is locked. Complete previous tasks!")
 					
 		elif hit.is_in_group("oven"):
 			if !crosshair.visible:
@@ -82,24 +92,20 @@ func _physics_process(_delta: float) -> void:
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				if hit.is_in_group("main_door"):
-					print(">>> This IS the main door")  # DEBUG
-					if player_ui.current_task_id >= 5:
-						crosshair.visible = true
-						if Input.is_action_just_pressed("interact"):
-							print("Opening passcode panel")
-							player_ui.show_passcode_entry()
-				else: 
+				if door_s:
+					door_s.play()
 					hit.get_parent().get_parent().get_parent().toggle_door()
 				
 		elif hit.name == "drawer":
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
+				if drawer_s:
+					drawer_s.play()
 				hit.get_parent().get_parent().toggle_door()
 				if hit.is_in_group("firstd"):
 					var drawer_parent = hit.get_parent().get_parent()
-					var note_inside = drawer_parent.get_node_or_null("note2")  # Changed from "note" to "note2"
+					var note_inside = drawer_parent.get_node_or_null("note2")  
 					if note_inside != null:
 						note_inside.visible = true
 						print("Note2 is now visible in the drawer!")
