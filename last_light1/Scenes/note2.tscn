@@ -17,7 +17,7 @@ transform = Transform3D(0.976148, 0, 0, 0, 0.13558, 0, 0, 0, 1.38662, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_1pdcj")
 mesh = SubResource("BoxMesh_ucs03")
 
-[node name="note" type="StaticBody3D" parent="papernote"]
+[node name="note2" type="StaticBody3D" parent="papernote"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="papernote/note"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papernote/note2"]
 shape = SubResource("ConvexPolygonShape3D_1pdcj")
