@@ -22,3 +22,11 @@ offset_bottom = 388.0
 theme_override_font_sizes/normal_font_size = 30
 text = "Sample task the user does"
 horizontal_alignment = 2
+
+[node name="timer" type="RichTextLabel" parent="."]
+offset_left = 1586.0
+offset_top = 960.0
+offset_right = 1846.0
+offset_bottom = 1098.0
+theme_override_font_sizes/normal_font_size = 80
+text = "15:00"
