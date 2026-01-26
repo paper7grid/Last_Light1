@@ -57,7 +57,6 @@ func _physics_process(_delta: float) -> void:
 				player_ui.show_note5()  #  note_open3
 				if player_ui.current_task_id == 5:
 					player_ui.advance_task(5, "Use the passcode to unclock the door and escape")
-					
 		elif hit.is_in_group("oven"):
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -87,4 +86,4 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if crosshair.visible:
 			crosshair.visible = false
-			
+		
