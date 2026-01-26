@@ -13,7 +13,6 @@ func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
 		 # Debug: 
-		
 		if hit.name == "note":
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -24,7 +23,20 @@ func _physics_process(_delta: float) -> void:
 					player_ui.advance_task(1, "Check the drawer in the bedroom for a clue")
 				else:
 					player_ui.show_note()
-					
+		elif hit.name == "note2":
+			if crosshair != null and !crosshair.visible:
+				crosshair.visible = true
+				
+			if Input.is_action_just_pressed("interact"):
+				player_ui.show_note2()  #  note_open2
+				if player_ui.current_task_id == 2:
+					player_ui.advance_task(2, "Search for the third clue")
+	
+		elif hit.is_in_group("oven"):
+			if !crosshair.visible:
+				crosshair.visible = true
+			if Input.is_action_just_pressed("interact"):
+				hit.get_parent().get_parent().toggle_door()
 		elif hit.name == "door":
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -36,14 +48,13 @@ func _physics_process(_delta: float) -> void:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hit.get_parent().get_parent().toggle_door()
-				
-				var drawer_parent = hit.get_parent().get_parent()
-				var note_inside = drawer_parent.get_node_or_null("note")
-				if hit.is_in_group("firstd") and player_ui.current_task_id == 2:
+				if hit.is_in_group("firstd"):
+					var drawer_parent = hit.get_parent().get_parent()
+					var note_inside = drawer_parent.get_node_or_null("note2")  # Changed from "note" to "note2"
 					if note_inside != null:
 						note_inside.visible = true
-					player_ui.advance_task(2, "Great! You found the clue. Now go to the clue.")
-					
+						print("Note2 is now visible in the drawer!")
+					#player_ui.advance_task(2, "Great! You found the clue. Now go to the clue.")
 		else: 
 			if crosshair.visible:
 				crosshair.visible = false
