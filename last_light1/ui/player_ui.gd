@@ -9,7 +9,7 @@ var entered_passcode: String = ""
 func _ready() -> void:
 	print("player_ui ready!")
 	$pause_menu.visible = false
-	$locked_mes.visible - false
+	$locked_mes.visible = false
 	$wrong.visible = false
 	$note_open.visible = false
 	$win_screen.visible = false
@@ -76,6 +76,11 @@ func _on_close_note4_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func _on_close_note5_pressed():
 	$note_open5.visible = false
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func close_locked_message():
+	$locked_mes.visible = false
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	

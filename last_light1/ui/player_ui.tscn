@@ -373,7 +373,7 @@ text = "X"
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="wrong/Button" to="." method="exit_lock"]
-[connection signal="pressed" from="locked_mes/close" to="." method="_on_close_note_pressed"]
+[connection signal="pressed" from="locked_mes/close" to="." method="close_locked_message"]
 
 [editable path="lock_ui"]
 [editable path="note_open"]
