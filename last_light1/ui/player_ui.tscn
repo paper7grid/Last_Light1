@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cptnkxy7cp8su"]
+[gd_scene load_steps=9 format=3 uid="uid://cptnkxy7cp8su"]
 
 [ext_resource type="Texture2D" uid="uid://bymtociw1k520" path="res://ui/ELR_Corsshairs.png" id="1_cfom6"]
 [ext_resource type="Script" uid="uid://dqbbur0b6jwhl" path="res://ui/player_ui.gd" id="1_ehg4m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clwirg7ip5eqx" path="res://Scenes/note_open.tscn" id="5_lp0io"]
 [ext_resource type="PackedScene" uid="uid://dow3a452e0vgi" path="res://Scenes/note_open2.tscn" id="6_ykvpg"]
 [ext_resource type="PackedScene" uid="uid://c3d05agkvqhdm" path="res://Scenes/note_open3.tscn" id="7_hff70"]
+[ext_resource type="PackedScene" uid="uid://d275wvnc0rnxt" path="res://Scenes/note_open4.tscn" id="8_f7sc3"]
 
 [node name="player_ui" type="Control"]
 process_mode = 3
@@ -40,13 +41,24 @@ texture = ExtResource("1_cfom6")
 
 [node name="note_open3" parent="." instance=ExtResource("7_hff70")]
 
+[node name="note_open4" parent="." instance=ExtResource("8_f7sc3")]
+
+[node name="RichTextLabel" parent="note_open4" index="1"]
+text = "The ceiling is high, but the floor is thin,
+Beneath your feet is where the screams begin.
+
+Follow the steps to the concrete deep
+To the hollow dark where the secrets sleep."
+
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="note_open/close" to="." method="_on_close_note_pressed"]
 [connection signal="pressed" from="note_open2/close" to="." method="_on_close_note2_pressed"]
 [connection signal="pressed" from="note_open3/close" to="." method="_on_close_note3_pressed"]
+[connection signal="pressed" from="note_open4/close" to="." method="_on_close_note4_pressed"]
 
 [editable path="pause_menu"]
 [editable path="note_open"]
 [editable path="note_open2"]
 [editable path="note_open3"]
+[editable path="note_open4"]

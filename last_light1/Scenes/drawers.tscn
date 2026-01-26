@@ -1,10 +1,9 @@
-[gd_scene load_steps=40 format=4 uid="uid://dktct7146tptt"]
+[gd_scene load_steps=39 format=4 uid="uid://dktct7146tptt"]
 
 [ext_resource type="Material" uid="uid://buh8djq1fb1ul" path="res://Assets/material/tablecov.tres" id="1_b8bpj"]
 [ext_resource type="Script" uid="uid://f6eg8vrewsl5" path="res://Scripts/door.gd" id="2_3iqqh"]
 [ext_resource type="Material" uid="uid://boy2vlbx1o8oj" path="res://Assets/material/roof.tres" id="2_5wxiu"]
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="3_3iqqh"]
-[ext_resource type="PackedScene" uid="uid://dtda5rh6dvnmr" path="res://Scenes/note2.tscn" id="5_3iqqh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cs4r"]
 resource_name = "Material"
@@ -432,9 +431,6 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_5wxiu")
 }
-
-[node name="note" parent="drawer2" instance=ExtResource("5_3iqqh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0807, 0, 0.305942)
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.116483, 0, 0, 0, 0.709709, 0, 0, 0, 1.04416, -2.22401, -1.27752, 0)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://d275wvnc0rnxt"]
+
+[ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/ChainsawCarnage.ttf" id="1_0uaci"]
+
+[node name="note_open" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -362.0
+offset_right = 522.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.731675, 0.96)
+color = Color(0.84104, 0.84104, 0.84104, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 393.0
+offset_top = 135.0
+offset_right = 860.0
+offset_bottom = 837.0
+theme_override_colors/default_color = Color(0.465094, 8.66354e-07, 3.36915e-07, 1)
+theme_override_fonts/normal_font = ExtResource("1_0uaci")
+theme_override_font_sizes/normal_font_size = 43
+text = "The ceiling is high, but the floor is thin,
+Beneath your feet is where the screams begin.
+Follow the steps to the concrete deep
+To the hollow dark where the secrets sleep."
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="close" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.762
+anchor_bottom = 0.072
+offset_left = 853.0
+offset_top = 38.0
+offset_right = -44.5
+offset_bottom = 38.28
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.699196, 6.37732e-07, 2.88785e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0uaci")
+theme_override_font_sizes/font_size = 40
+text = "X"
