@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://buh8djq1fb1ul" path="res://Assets/material/tablecov.tres" id="1_b8bpj"]
 [ext_resource type="Script" uid="uid://f6eg8vrewsl5" path="res://Scripts/door.gd" id="2_3iqqh"]
 [ext_resource type="Material" uid="uid://boy2vlbx1o8oj" path="res://Assets/material/roof.tres" id="2_5wxiu"]
-[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="3_3iqqh"]
+[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/furniture assets/house_mater.tres" id="3_3iqqh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cs4r"]
 resource_name = "Material"

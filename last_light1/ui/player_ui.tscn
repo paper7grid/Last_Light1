@@ -24,8 +24,18 @@ script = ExtResource("1_ehg4m")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="crosshair" type="CenterContainer" parent="CanvasLayer"]
-offset_right = 1260.0
-offset_bottom = 762.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.0
+offset_top = -381.0
+offset_right = 630.0
+offset_bottom = 381.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00243884
 
 [node name="crosshairarr" type="TextureRect" parent="CanvasLayer/crosshair"]
 texture_filter = 1
@@ -36,22 +46,154 @@ texture = ExtResource("1_cfom6")
 
 [node name="pause_menu" parent="." instance=ExtResource("2_vq5xy")]
 
+[node name="ColorRect" parent="pause_menu" index="0"]
+scale = Vector2(1.09743, 1.29397)
+color = Color(0.483103, 0.112554, 0.154351, 1)
+
+[node name="ColorRect2" parent="pause_menu" index="1"]
+scale = Vector2(1.10628, 1.2746)
+
+[node name="RichTextLabel" parent="pause_menu" index="2"]
+scale = Vector2(1.50974, 1.48442)
+scroll_active = false
+
+[node name="resume" parent="pause_menu" index="3"]
+offset_top = 237.0
+offset_bottom = 337.0
+
+[node name="settings" parent="pause_menu" index="4"]
+offset_left = 116.0
+offset_top = 389.0
+offset_right = 396.0
+offset_bottom = 489.0
+
+[node name="control" parent="pause_menu" index="5"]
+offset_top = 557.0
+offset_bottom = 657.0
+
 [node name="note_open" parent="." instance=ExtResource("5_lp0io")]
+
+[node name="ColorRect" parent="note_open" index="0"]
+offset_left = -411.0
+offset_top = -473.0
+offset_right = 519.0
+offset_bottom = 285.0
+scale = Vector2(0.882505, 1.24663)
+color = Color(0.84104, 0.84104, 0.84104, 1)
+
+[node name="RichTextLabel" parent="note_open" index="1"]
+theme_override_colors/default_color = Color(0.465094, 8.66354e-07, 3.36915e-07, 1)
+
+[node name="close" parent="note_open" index="2"]
+offset_left = 1005.0
+offset_top = 20.0
+offset_right = 107.5
+offset_bottom = 20.28
+scale = Vector2(0.646192, 1.14728)
+theme_override_colors/icon_hover_color = Color(0.699196, 6.37732e-07, 2.88785e-07, 1)
 
 [node name="note_open2" parent="." instance=ExtResource("6_ykvpg")]
 
+[node name="ColorRect" parent="note_open2" index="0"]
+offset_left = -373.0
+offset_top = -466.0
+offset_right = 431.0
+offset_bottom = 292.0
+scale = Vector2(0.934021, 1.17128)
+
+[node name="RichTextLabel" parent="note_open2" index="1"]
+offset_left = 386.0
+offset_top = 163.0
+offset_right = 869.0
+offset_bottom = 865.0
+scale = Vector2(1.38183, 1.47478)
+
+[node name="close" parent="note_open2" index="2"]
+offset_left = 963.0
+offset_top = 31.0
+offset_right = 65.4999
+offset_bottom = 31.28
+scale = Vector2(0.640002, 1)
+
 [node name="note_open3" parent="." instance=ExtResource("7_hff70")]
+
+[node name="ColorRect" parent="note_open3" index="0"]
+offset_left = -375.0
+offset_top = -453.0
+offset_right = 429.0
+offset_bottom = 305.0
+scale = Vector2(0.942224, 1.18814)
+
+[node name="RichTextLabel" parent="note_open3" index="1"]
+offset_left = 358.0
+offset_top = 172.0
+offset_right = 841.0
+offset_bottom = 874.0
+scale = Vector2(1.52823, 1.38369)
+
+[node name="close" parent="note_open3" index="2"]
+offset_left = 969.0
+offset_right = 71.5
+scale = Vector2(0.639998, 1)
 
 [node name="note_open4" parent="." instance=ExtResource("8_f7sc3")]
 
+[node name="ColorRect" parent="note_open4" index="0"]
+offset_left = -379.0
+offset_top = -471.0
+offset_right = 425.0
+offset_bottom = 287.0
+scale = Vector2(0.972826, 1.22411)
+
 [node name="RichTextLabel" parent="note_open4" index="1"]
+offset_left = 358.0
+offset_top = 128.0
+offset_right = 825.0
+offset_bottom = 830.0
+scale = Vector2(1.55323, 1.53946)
 text = "The ceiling is high, but the floor is thin,
 Beneath your feet is where the screams begin.
 
 Follow the steps to the concrete deep
 To the hollow dark where the secrets sleep."
 
+[node name="close" parent="note_open4" index="2"]
+offset_left = 970.0
+offset_top = 24.0
+offset_right = 72.5001
+offset_bottom = 24.28
+scale = Vector2(0.720002, 1)
+
 [node name="note_open5" parent="." instance=ExtResource("9_g1ro4")]
+
+[node name="ColorRect" parent="note_open5" index="0"]
+offset_left = -349.0
+offset_top = -460.0
+offset_right = 455.0
+offset_bottom = 298.0
+scale = Vector2(0.911053, 1.20807)
+
+[node name="RichTextLabel" parent="note_open5" index="1"]
+offset_left = 424.0
+offset_top = 115.0
+offset_right = 891.0
+offset_bottom = 817.0
+scale = Vector2(1.37752, 1.21602)
+text = "Most have buckled, most have cried,
+Most are buried here inside. 
+
+The path is clear, the game is through,
+The heavy door now waits for you.
+Run to the light, unlock the chain—
+Before I change my mind again
+Passcode: 7542"
+
+[node name="close" parent="note_open5" index="2"]
+offset_left = 953.0
+offset_top = 35.0
+offset_right = 55.5
+offset_bottom = 35.28
+scale = Vector2(0.719998, 1)
 
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]

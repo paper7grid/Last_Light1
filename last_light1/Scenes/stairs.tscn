@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://myqls52h33ed"]
 
-[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_aiuvb"]
+[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/furniture assets/house_mater.tres" id="1_aiuvb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k762u"]
 resource_name = "Material"

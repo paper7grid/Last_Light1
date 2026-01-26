@@ -129,6 +129,6 @@ mesh = SubResource("ArrayMesh_0q8c3")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1.90379, 0, 0, 0, 1.90379, 0, 0, 0, 1.90379, 0, -5.37671, 0)
+transform = Transform3D(1.90379, 0, 0, 0, 1.90379, 0, 0, 0, 1.90379, 0, -3.84187, 0)
 shadow_enabled = true
-omni_range = 13.6334
+omni_range = 15.4628

@@ -1,6 +1,6 @@
-[gd_scene load_steps=60 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=61 format=4 uid="uid://coac77qko23re"]
 
-[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
+[ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/furniture assets/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
 [ext_resource type="Material" uid="uid://boy2vlbx1o8oj" path="res://Assets/material/roof.tres" id="2_n87ef"]
 [ext_resource type="PackedScene" uid="uid://cmuu8gohgusn8" path="res://Scenes/table.tscn" id="4_iqtyj"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dtda5rh6dvnmr" path="res://Scenes/note2.tscn" id="24_g3br3"]
 [ext_resource type="PackedScene" uid="uid://xtj670au3a73" path="res://Scenes/note4.tscn" id="25_rss08"]
 [ext_resource type="PackedScene" uid="uid://bk7uk4gktfv6q" path="res://Scenes/note5.tscn" id="26_lv2cm"]
+[ext_resource type="PackedScene" uid="uid://d3rq04xg4jypr" path="res://Scenes/lock.tscn" id="27_qabsv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -718,3 +719,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77327, -2.46587, -25.6287)
 
 [node name="note5" parent="." instance=ExtResource("26_lv2cm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.85988, -13.2273, -25.3443)
+
+[node name="lock" parent="." instance=ExtResource("27_qabsv")]
+transform = Transform3D(-7.10227e-09, 0, 0.162481, 0, 0.162481, 0, -0.162481, 0, -7.10227e-09, 7.53318, -1.74517, 27.472)

@@ -8,7 +8,7 @@ func _ready():
 	print("RayCast3D ready!")
 	print("player_ui found: ", player_ui != null)
 	print("crosshair found: ", crosshair != null)
-
+	
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
@@ -56,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				player_ui.show_note5()  #  note_open3
 				if player_ui.current_task_id == 5:
-					player_ui.advance_task(5, "Use the key to escape outside!")
+					player_ui.advance_task(5, "Use the passcode to unclock the door and escape")
 					
 		elif hit.is_in_group("oven"):
 			if !crosshair.visible:
@@ -87,3 +87,4 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if crosshair.visible:
 			crosshair.visible = false
+			
