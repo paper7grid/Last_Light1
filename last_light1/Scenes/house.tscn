@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://coac77qko23re"]
+[gd_scene load_steps=60 format=4 uid="uid://coac77qko23re"]
 
 [ext_resource type="Material" uid="uid://dk4jmtvpt7n51" path="res://Assets/material/house_mater.tres" id="1_okrnj"]
 [ext_resource type="Material" uid="uid://dv4eqwcoi5sej" path="res://Assets/material/wallbase.tres" id="2_3jr7h"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://bhp7p7piyhsrq" path="res://Scenes/note.tscn" id="22_218mn"]
 [ext_resource type="PackedScene" uid="uid://cbb6dbnk45yfh" path="res://Scenes/note3.tscn" id="23_cx658"]
 [ext_resource type="PackedScene" uid="uid://dtda5rh6dvnmr" path="res://Scenes/note2.tscn" id="24_g3br3"]
+[ext_resource type="PackedScene" uid="uid://xtj670au3a73" path="res://Scenes/note4.tscn" id="25_rss08"]
+[ext_resource type="PackedScene" uid="uid://bk7uk4gktfv6q" path="res://Scenes/note5.tscn" id="26_lv2cm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7tl"]
 resource_name = "Material"
@@ -710,3 +712,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1017, -1.19633, 20.8811)
 
 [node name="note3" parent="." instance=ExtResource("24_g3br3")]
 transform = Transform3D(0.0393296, 0, -0.999226, 0, 1, 0, 0.999226, 0, 0.0393296, 16.681, -2.77354, -7.44115)
+
+[node name="note4" parent="." instance=ExtResource("25_rss08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77327, -2.46587, -25.6287)
+
+[node name="note5" parent="." instance=ExtResource("26_lv2cm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.85988, -13.2273, -25.3443)
