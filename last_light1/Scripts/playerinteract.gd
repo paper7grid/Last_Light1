@@ -3,7 +3,7 @@ extends RayCast3D
 @onready var door_s = get_tree().current_scene.get_node_or_null("door_sound")
 @onready var drawer_s = get_tree().current_scene.get_node_or_null("drawer_opend")
 @onready var note_sound = get_tree().current_scene.get_node_or_null("paper_note")
-@onready var foot_sound = get_tree().current_scene.get_node_or_null("footsteps")
+
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
 func _ready():
 	# Debug prints to check if nodes are found

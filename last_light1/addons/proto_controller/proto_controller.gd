@@ -4,6 +4,9 @@
 # Happy prototyping!
 extends CharacterBody3D
 @onready var flashlight: SpotLight3D = $Head/flashlight
+@onready var footstep_s = $footsteps
+var footstep_timer: float = 0.0
+var footstep_interval: float = 0.5
 
 ## Can we move around?
 @export var can_move : bool = true
@@ -51,6 +54,7 @@ var freeflying : bool = false
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+var direction: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	check_input_mappings()
@@ -103,10 +107,10 @@ func _physics_process(delta: float) -> void:
 	# Apply desired movement to velocity
 	if can_move:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
-		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if move_dir:
-			velocity.x = move_dir.x * move_speed
-			velocity.z = move_dir.z * move_speed
+		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * move_speed
+			velocity.z = direction.z * move_speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, move_speed)
 			velocity.z = move_toward(velocity.z, 0, move_speed)
@@ -116,7 +120,17 @@ func _physics_process(delta: float) -> void:
 	
 	# Use velocity to actually move
 	move_and_slide()
+	play_footsteps(delta)
 
+func play_footsteps(delta: float):
+	if direction != Vector3.ZERO and is_on_floor():
+		footstep_timer -= delta
+		if footstep_timer <= 0:
+			if footstep_s and not footstep_s.playing:
+				footstep_s.play()
+			footstep_interval = 0.5
+		else:
+			footstep_timer = 0.0
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
 ## Modifies look_rotation based on rot_input, then resets basis and rotates by look_rotation.

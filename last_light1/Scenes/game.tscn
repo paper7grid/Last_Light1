@@ -104,6 +104,7 @@ trigger_id = 2
 [node name="bg_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("7_1l0tm")
+volume_db = -10.0
 
 [node name="door_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_v158k")
@@ -114,5 +115,5 @@ stream = ExtResource("9_h4fw4")
 [node name="paper_note" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ldgsr")
 
-[node name="footsteps" type="AudioStreamPlayer" parent="."]
+[node name="footsteps" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_o5yvi")
