@@ -419,7 +419,7 @@ transform = Transform3D(0.0791272, 0, 5.31167, 0, 4.29066, 0, -3.96941, 0, 0.105
 transform = Transform3D(-5.95148, 0, 0.243056, 0, 0.139688, 0, -0.609671, 0, -2.37266, 14.8827, -2.77478, 18.2446)
 
 [node name="tv" parent="." instance=ExtResource("8_gau5j")]
-transform = Transform3D(0.0533393, 0, 0.492197, 0, 0.495079, 0, -0.492197, 0, 0.0533393, 14.5652, -1.81406, 17.9533)
+transform = Transform3D(0.0533393, 0, 0.492197, 0, 0.495079, 0, -0.492197, 0, 0.0533393, 14.6662, -1.71371, 18.044)
 
 [node name="vase" parent="." instance=ExtResource("9_7ug6d")]
 transform = Transform3D(2.16821, 0, 0, 0, 2.16821, 0, 0, 0, 2.16821, -8.86065, -2.01852, 18.7462)
@@ -714,7 +714,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.615182, 0, 0.916386, 0, 1.10373, 0, -0.916386, 0, 0.615182, 7.41737, -4.13378, -4.07886)
 
 [node name="note2" parent="." instance=ExtResource("23_cx658")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1017, -1.19633, 20.8811)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5853, -1.18487, 20.8956)
 
 [node name="note3" parent="." instance=ExtResource("24_g3br3")]
 transform = Transform3D(0.0393296, 0, -0.999226, 0, 1, 0, 0.999226, 0, 0.0393296, 16.681, -2.77354, -7.44115)

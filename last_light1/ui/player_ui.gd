@@ -56,7 +56,6 @@ func show_note():
 	if !$note_open.visible:
 		$note_open.visible = true
 		get_tree().paused = true
-		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		print("Note is now visible")  # Debug
 func show_note2():
@@ -228,5 +227,4 @@ func load_settings():
 	if err == OK:
 		volume = config.get_value("audio", "volume", 0.8)
 		apply_volume()
-func settings_ui() -> void:
-	pass # Replace with function body.
+		print("volume done.yay.")
