@@ -335,7 +335,6 @@ theme_override_font_sizes/font_size = 110
 text = "BACK"
 
 [node name="locked_mes" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="locked_mes"]
 offset_left = 411.0
@@ -424,36 +423,31 @@ text = "Settings
 "
 
 [node name="volume" type="Label" parent="setting_ui"]
-offset_left = 736.0
-offset_top = 481.0
-offset_right = 1117.0
-offset_bottom = 613.0
+offset_left = 649.0
+offset_top = 468.0
+offset_right = 1811.0
+offset_bottom = 600.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_2pr6j")
 theme_override_font_sizes/font_size = 100
 text = "Volume"
-
-[node name="brightness" type="Label" parent="setting_ui"]
-offset_left = 1257.0
-offset_top = 478.0
-offset_right = 1807.0
-offset_bottom = 606.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("14_2pr6j")
-theme_override_font_sizes/font_size = 100
-text = "Brightness"
+horizontal_alignment = 1
 
 [node name="vol_s" type="HSlider" parent="setting_ui"]
-offset_left = 717.0
-offset_top = 649.0
-offset_right = 1059.0
-offset_bottom = 729.0
+offset_left = 960.0
+offset_top = 636.0
+offset_right = 1508.0
+offset_bottom = 716.0
 
-[node name="bright_s" type="HSlider" parent="setting_ui"]
-offset_left = 1316.0
-offset_top = 653.0
-offset_right = 1658.0
-offset_bottom = 733.0
+[node name="Button" type="Button" parent="setting_ui"]
+offset_left = 1036.0
+offset_top = 800.0
+offset_right = 1445.0
+offset_bottom = 955.0
+theme_override_colors/font_hover_color = Color(0.695842, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_2pr6j")
+theme_override_font_sizes/font_size = 50
+text = "Apply"
 
 [connection signal="pressed" from="lock_ui/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="lock_ui/Button2" to="." method="check_passcode"]
@@ -466,6 +460,8 @@ offset_bottom = 733.0
 [connection signal="pressed" from="win_screen/quitg" to="." method="quit_game"]
 [connection signal="pressed" from="win_screen/playg" to="." method="play_again"]
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
+[connection signal="pressed" from="pause_menu/settings" to="." method="show_settings"]
+[connection signal="pressed" from="pause_menu/control" to="." method="show_controls_from_settings"]
 [connection signal="pressed" from="pause_menu/control" to="." method="control_settings"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="wrong/Button" to="." method="exit_lock"]

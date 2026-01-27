@@ -29,6 +29,7 @@ func _ready() -> void:
 	$game_over_screen.visible = false
 	$note_open2.visible = false 
 	$note_open3.visible = false
+	$setting_ui.visible = false
 	$note_open4.visible = false
 	$note_open5.visible = false
 	$lock_ui.visible = false
@@ -102,17 +103,15 @@ func close_locked_message():
 	$locked_mes.visible = false
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 func set_task(tasktxt: String):
 	$taskui/tasktxt.text = tasktxt
 	print("Task set to: ", tasktxt)  # D
 func advance_task(id: int, next_task_text: String):
-	print("advance_task called with id: ", id, " current_task_id: ", current_task_id)  # Debug
+	print("advance_tassk called with id: ", id, " current_task_id: ", current_task_id)  # Debug
 	if id == current_task_id:
 		set_task(next_task_text)
 		current_task_id += 1
 		print("Task Advanced to: ", current_task_id)
-		
 func update_timer_display():
 	var minutes = int(time_remaining) / 60
 	var seconds = int(time_remaining) % 60
@@ -146,12 +145,18 @@ func game_over_win():
 		$win_screen.visible = true
 	set_task("YAY")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+func show_settings():
+	if has_node("setting_ui"):
+		$setting_ui.visible = true
+		if $setting_ui.has_node("vol_s"):
+			$setting_ui/vol_s.value = volume
 func resume_game():
 	get_tree().paused = false
 	$pause_menu.visible = false
 	if has_node("control_ui"):
 		$control_ui.visible = false
+	if has_node("setting_ui"):
+		$setting_ui.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func quit_game():
 	get_tree().quit()
@@ -191,7 +196,6 @@ func _process(delta: float) -> void:
 			game_over_lose()
 	if time_remaining < 892.0 and !tutorial_shown["pause"]:
 		show_tutorial_message("Press P to pause. Check Controls for more info", "pause", 5.0)
-		
 	if Input.is_action_just_pressed("pause") and !$note_open.visible:
 		$pause_menu.visible = !$pause_menu.visible
 		get_tree().paused = $pause_menu.visible
@@ -199,3 +203,13 @@ func _process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if !get_tree().paused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func show_controls_from_settings():
+	if has_node("control_ui"):
+		$control_ui.visible = true
+	if has_node("setting_ui"):
+		$setting_ui.visible = false
+		
+		
+func settings_ui() -> void:
+	pass # Replace with function body.
