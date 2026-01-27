@@ -23,6 +23,8 @@ func _physics_process(_delta: float) -> void:
 		elif hit.name == "note":
 			if !crosshair.visible:
 				crosshair.visible = true
+			if !player_ui.tutorial_shown["interact_note"]:
+				player_ui.show_tutorial_message("Press E to pick up and read the note or to interact", "interact_note", 4.0)
 			if Input.is_action_just_pressed("interact"):
 				if note_sound:
 					note_sound.play()

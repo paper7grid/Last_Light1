@@ -225,6 +225,16 @@ theme_override_font_sizes/normal_font_size = 80
 text = "You are dead
 "
 
+[node name="restart" type="Button" parent="game_over_screen"]
+offset_left = 711.0
+offset_top = 758.0
+offset_right = 1227.0
+offset_bottom = 919.0
+theme_override_colors/font_hover_color = Color(0.823529, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_fynll")
+theme_override_font_sizes/font_size = 100
+text = "Play Again"
+
 [node name="win_screen" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="win_screen"]
@@ -369,6 +379,29 @@ text = "X"
 offset_left = 631.0
 offset_bottom = 1092.0
 
+[node name="RichTextLabel2" parent="control_ui" index="2"]
+offset_top = 354.0
+offset_bottom = 1078.0
+text = "P  - to pause/unpause
+E - to interact (pickup or open)
+F - Flashlight
+Space - to jump (use for stairs)
+Arrow keys to move "
+
+[node name="tutorial_message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.271
+anchor_bottom = 0.145
+offset_left = 4.0
+offset_top = 861.0
+offset_right = 1337.65
+offset_bottom = 937.5
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="lock_ui/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="lock_ui/Button2" to="." method="check_passcode"]
 [connection signal="pressed" from="note_open/close" to="." method="_on_close_note_pressed"]
@@ -376,7 +409,9 @@ offset_bottom = 1092.0
 [connection signal="pressed" from="note_open3/close" to="." method="_on_close_note3_pressed"]
 [connection signal="pressed" from="note_open4/close" to="." method="_on_close_note4_pressed"]
 [connection signal="pressed" from="note_open5/close" to="." method="_on_close_note5_pressed"]
+[connection signal="pressed" from="game_over_screen/restart" to="." method="play_again"]
 [connection signal="pressed" from="win_screen/quitg" to="." method="quit_game"]
+[connection signal="pressed" from="win_screen/playg" to="." method="play_again"]
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/control" to="." method="control_settings"]
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
