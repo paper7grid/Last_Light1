@@ -466,6 +466,8 @@ text = "Apply"
 [connection signal="pressed" from="pause_menu/quitgame" to="." method="quit_game"]
 [connection signal="pressed" from="wrong/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="locked_mes/close" to="." method="close_locked_message"]
+[connection signal="value_changed" from="setting_ui/vol_s" to="." method="_on_volume_changed"]
+[connection signal="pressed" from="setting_ui/Button" to="." method="apply_settings"]
 
 [editable path="lock_ui"]
 [editable path="note_open"]

@@ -32,6 +32,7 @@ func _ready() -> void:
 	$setting_ui.visible = false
 	$note_open4.visible = false
 	$note_open5.visible = false
+	load_settings()
 	$lock_ui.visible = false
 	$taskui/tasktxt.text = "Find and read the mysterious paper"
 	print("Current Task ID: ", current_task_id)
@@ -203,13 +204,35 @@ func _process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if !get_tree().paused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func show_controls_from_settings():
 	if has_node("control_ui"):
 		$control_ui.visible = true
 	if has_node("setting_ui"):
 		$setting_ui.visible = false
+func _on_volume_changed(value: float):
+	volume = value
+	apply_volume()
+func apply_settings():
+	save_settings()
+	print("Settings saved: ", volume)
+func apply_volume():
+	if volume == 0:
+		AudioServer.set_bus_mute(0, true)
+	else:
+		AudioServer.set_bus_mute(0, false)
+		AudioServer.set_bus_volume_db(0, linear_to_db(volume))
+func save_settings():
+	var config = ConfigFile.new()
+	config.set_value("audio", "volume", volume)
+	config.save("user://settings.cfg")
 		
-		
+func load_settings():
+	var config = ConfigFile.new()
+	var err = config.load("user://settings.cfg")
+	
+	if err == OK:
+		volume = config.get_value("audio", "volume", 0.8)
+		apply_volume()
+
 func settings_ui() -> void:
 	pass # Replace with function body.
