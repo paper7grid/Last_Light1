@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cptnkxy7cp8su"]
+[gd_scene load_steps=15 format=3 uid="uid://cptnkxy7cp8su"]
 
 [ext_resource type="Texture2D" uid="uid://bymtociw1k520" path="res://ui/ELR_Corsshairs.png" id="1_cfom6"]
 [ext_resource type="Script" uid="uid://dqbbur0b6jwhl" path="res://ui/player_ui.gd" id="1_ehg4m"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://dw7qlpf7wqxaj" path="res://HelpMe.ttf" id="11_1wie7"]
 [ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/ChainsawCarnage.ttf" id="12_fynll"]
 [ext_resource type="PackedScene" uid="uid://5burktlh5wub" path="res://Scenes/control_ui.tscn" id="13_obao7"]
+[ext_resource type="FontFile" uid="uid://be0ajaxknc1i7" path="res://Assets/Textures/vinivicious.ttf" id="14_2pr6j"]
 
 [node name="player_ui" type="Control"]
 process_mode = 3
@@ -334,6 +335,7 @@ theme_override_font_sizes/font_size = 110
 text = "BACK"
 
 [node name="locked_mes" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="locked_mes"]
 offset_left = 411.0
@@ -401,6 +403,57 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="setting_ui" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="setting_ui"]
+offset_left = 631.0
+offset_top = 6.0
+offset_right = 1834.0
+offset_bottom = 1092.0
+
+[node name="title" type="Label" parent="setting_ui"]
+offset_left = 977.0
+offset_top = 50.0
+offset_right = 1690.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_2pr6j")
+theme_override_font_sizes/font_size = 120
+text = "Settings
+"
+
+[node name="volume" type="Label" parent="setting_ui"]
+offset_left = 736.0
+offset_top = 481.0
+offset_right = 1117.0
+offset_bottom = 613.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_2pr6j")
+theme_override_font_sizes/font_size = 100
+text = "Volume"
+
+[node name="brightness" type="Label" parent="setting_ui"]
+offset_left = 1257.0
+offset_top = 478.0
+offset_right = 1807.0
+offset_bottom = 606.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_2pr6j")
+theme_override_font_sizes/font_size = 100
+text = "Brightness"
+
+[node name="vol_s" type="HSlider" parent="setting_ui"]
+offset_left = 717.0
+offset_top = 649.0
+offset_right = 1059.0
+offset_bottom = 729.0
+
+[node name="bright_s" type="HSlider" parent="setting_ui"]
+offset_left = 1316.0
+offset_top = 653.0
+offset_right = 1658.0
+offset_bottom = 733.0
 
 [connection signal="pressed" from="lock_ui/Button" to="." method="exit_lock"]
 [connection signal="pressed" from="lock_ui/Button2" to="." method="check_passcode"]

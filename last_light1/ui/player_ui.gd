@@ -6,6 +6,8 @@ var game_over: bool = false
 var correct_passcode: String = "7542"
 var entered_passcode: String = ""
 var message_timer: float = 0.0
+var volume: float = 0.8
+var brightness: float = 1.0
 var tutorial_shown: Dictionary = {
 	"movement": false,
 	"look": false,
