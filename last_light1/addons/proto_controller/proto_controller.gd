@@ -143,7 +143,6 @@ func rotate_look(rot_input : Vector2):
 	head.transform.basis = Basis()
 	head.rotate_x(look_rotation.x)
 
-
 func enable_freefly():
 	collider.disabled = true
 	freeflying = true
@@ -153,11 +152,9 @@ func disable_freefly():
 	collider.disabled = false
 	freeflying = false
 
-
 func capture_mouse():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
-
 
 func release_mouse():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -187,7 +184,7 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
-
+		
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("flashlight"):
 		flashlight.visible = !flashlight.visible

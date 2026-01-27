@@ -5,6 +5,16 @@ var time_remaining: float = 900.0  # 15 minutes about?
 var game_over: bool = false
 var correct_passcode: String = "7542"
 var entered_passcode: String = ""
+var message_timer: float = 0.0
+var tutorial_shown: Dictionary = {
+	"movement": false,
+	"look": false,
+	"interact_note": false,
+	"interact_drawer": false,
+	"pause": false,
+	"controls_hint": false
+}
+var current_tutorial_message: String = ""
 
 func _ready() -> void:
 	
