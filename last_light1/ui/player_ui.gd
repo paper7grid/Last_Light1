@@ -233,6 +233,6 @@ func load_settings():
 	if err == OK:
 		volume = config.get_value("audio", "volume", 0.8)
 		apply_volume()
-
+	
 func settings_ui() -> void:
 	pass # Replace with function body.

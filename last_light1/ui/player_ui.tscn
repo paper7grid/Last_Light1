@@ -440,10 +440,10 @@ offset_right = 1508.0
 offset_bottom = 716.0
 
 [node name="Button" type="Button" parent="setting_ui"]
-offset_left = 1036.0
-offset_top = 800.0
-offset_right = 1445.0
-offset_bottom = 955.0
+offset_left = 1038.0
+offset_top = 789.0
+offset_right = 1447.0
+offset_bottom = 944.0
 theme_override_colors/font_hover_color = Color(0.695842, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_2pr6j")
 theme_override_font_sizes/font_size = 50
