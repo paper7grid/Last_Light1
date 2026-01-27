@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dw7qlpf7wqxaj"
-path="res://.godot/imported/HelpMe.ttf-0e0bf3ce21730ec612a5cf815096840a.fontdata"
+uid="uid://wkav3rlpn4et"
+path="res://.godot/imported/ChainsawCarnage.ttf-c6635a715661cb95f86e8ae18f02949b.fontdata"
 
 [deps]
 
-source_file="res://HelpMe.ttf"
-dest_files=["res://.godot/imported/HelpMe.ttf-0e0bf3ce21730ec612a5cf815096840a.fontdata"]
+source_file="res://Assets/fonts/ChainsawCarnage.ttf"
+dest_files=["res://.godot/imported/ChainsawCarnage.ttf-c6635a715661cb95f86e8ae18f02949b.fontdata"]
 
 [params]
 

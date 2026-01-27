@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://wkav3rlpn4et"
-path="res://.godot/imported/ChainsawCarnage.ttf-5ecfdca429cbb03a9cb3192567ac0309.fontdata"
+uid="uid://be0ajaxknc1i7"
+path="res://.godot/imported/vinivicious.ttf-83ae5fbb25beb35eb22e4174f20c9538.fontdata"
 
 [deps]
 
-source_file="res://Assets/ChainsawCarnage.ttf"
-dest_files=["res://.godot/imported/ChainsawCarnage.ttf-5ecfdca429cbb03a9cb3192567ac0309.fontdata"]
+source_file="res://Assets/fonts/vinivicious.ttf"
+dest_files=["res://.godot/imported/vinivicious.ttf-83ae5fbb25beb35eb22e4174f20c9538.fontdata"]
 
 [params]
 

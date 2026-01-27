@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5burktlh5wub"]
 
-[ext_resource type="FontFile" uid="uid://be0ajaxknc1i7" path="res://Assets/Textures/vinivicious.ttf" id="1_1qgno"]
+[ext_resource type="FontFile" uid="uid://be0ajaxknc1i7" path="res://Assets/fonts/vinivicious.ttf" id="1_1qgno"]
 
 [node name="control_ui" type="CanvasLayer"]
 

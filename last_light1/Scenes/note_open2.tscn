@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dow3a452e0vgi"]
 
-[ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/ChainsawCarnage.ttf" id="1_pbd2e"]
+[ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/fonts/ChainsawCarnage.ttf" id="1_pbd2e"]
 
 [node name="note_open" type="CanvasLayer"]
 

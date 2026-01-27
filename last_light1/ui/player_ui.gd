@@ -1,7 +1,8 @@
 extends Control
 
 var current_task_id: int = 1  
-var time_remaining: float = 900.0  # 15 minutes about? 
+var time_remaining: float = 900.0 
+ # 15 minutes about? 
 var game_over: bool = false
 var correct_passcode: String = "7542"
 var entered_passcode: String = ""
@@ -17,9 +18,7 @@ var tutorial_shown: Dictionary = {
 	"controls_hint": false
 }
 var current_tutorial_message: String = ""
-
 func _ready() -> void:
-	
 	$pause_menu.visible = false
 	$locked_mes.visible = false
 	$wrong.visible = false
@@ -33,6 +32,7 @@ func _ready() -> void:
 	$note_open4.visible = false
 	$note_open5.visible = false
 	load_settings()
+	
 	$lock_ui.visible = false
 	$taskui/tasktxt.text = "Find and read the mysterious paper"
 	print("Current Task ID: ", current_task_id)
@@ -116,7 +116,6 @@ func advance_task(id: int, next_task_text: String):
 func update_timer_display():
 	var minutes = int(time_remaining) / 60
 	var seconds = int(time_remaining) % 60
-	# Update 
 	if $taskui.has_node("timer"):
 		$taskui.get_node("timer").text = "%02d:%02d" % [minutes, seconds]
 func locked_message():
@@ -164,11 +163,9 @@ func quit_game():
 func control_settings():
 	if has_node("control_ui"):
 		$control_ui.visible = true
-
 func play_again():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
-	
 func show_passcode_entry():
 	if has_node("lock_ui"):
 		$lock_ui.visible = true
@@ -176,13 +173,11 @@ func show_passcode_entry():
 		entered_passcode = ""
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
 func check_passcode():
 	entered_passcode = $lock_ui/passcode_input.text
 	if entered_passcode == correct_passcode:
 		print("Correct passcode!")
 		$lock_ui.visible = false
-		
 		game_over_win()
 	else: 
 			print("Wrong passcode!")
@@ -225,14 +220,12 @@ func save_settings():
 	var config = ConfigFile.new()
 	config.set_value("audio", "volume", volume)
 	config.save("user://settings.cfg")
-		
+
 func load_settings():
 	var config = ConfigFile.new()
 	var err = config.load("user://settings.cfg")
-	
 	if err == OK:
 		volume = config.get_value("audio", "volume", 0.8)
 		apply_volume()
-	
 func settings_ui() -> void:
 	pass # Replace with function body.

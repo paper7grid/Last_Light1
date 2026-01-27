@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://c3d05agkvqhdm" path="res://Scenes/note_open3.tscn" id="7_hff70"]
 [ext_resource type="PackedScene" uid="uid://d275wvnc0rnxt" path="res://Scenes/note_open4.tscn" id="8_f7sc3"]
 [ext_resource type="PackedScene" uid="uid://cck6xlh2yl1kf" path="res://Scenes/note_open5.tscn" id="9_g1ro4"]
-[ext_resource type="FontFile" uid="uid://dw7qlpf7wqxaj" path="res://HelpMe.ttf" id="11_1wie7"]
-[ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/ChainsawCarnage.ttf" id="12_fynll"]
+[ext_resource type="FontFile" uid="uid://dw7qlpf7wqxaj" path="res://Assets/fonts/HelpMe.ttf" id="11_1wie7"]
+[ext_resource type="FontFile" uid="uid://wkav3rlpn4et" path="res://Assets/fonts/ChainsawCarnage.ttf" id="12_fynll"]
 [ext_resource type="PackedScene" uid="uid://5burktlh5wub" path="res://Scenes/control_ui.tscn" id="13_obao7"]
-[ext_resource type="FontFile" uid="uid://be0ajaxknc1i7" path="res://Assets/Textures/vinivicious.ttf" id="14_2pr6j"]
+[ext_resource type="FontFile" uid="uid://be0ajaxknc1i7" path="res://Assets/fonts/vinivicious.ttf" id="14_2pr6j"]
 
 [node name="player_ui" type="Control"]
 process_mode = 3
@@ -66,7 +66,6 @@ offset_top = -519.0
 offset_right = 497.0
 offset_bottom = 239.0
 scale = Vector2(0.901893, 1.36363)
-color = Color(0.84104, 0.84104, 0.84104, 1)
 
 [node name="RichTextLabel" parent="note_open" index="1"]
 offset_left = 550.0
@@ -74,7 +73,6 @@ offset_top = 123.0
 offset_right = 1173.0
 offset_bottom = 825.0
 scale = Vector2(1.18657, 1.30196)
-theme_override_colors/default_color = Color(0.465094, 8.66354e-07, 3.36915e-07, 1)
 
 [node name="close" parent="note_open" index="2"]
 offset_left = 1130.0
@@ -84,7 +82,6 @@ offset_bottom = 34.28
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.387, 0.903)
-theme_override_colors/icon_hover_color = Color(0.699196, 6.37732e-07, 2.88785e-07, 1)
 theme_override_font_sizes/font_size = 60
 
 [node name="note_open2" parent="." instance=ExtResource("6_ykvpg")]
@@ -278,7 +275,6 @@ text = "Play Again"
 
 [node name="ColorRect" parent="pause_menu" index="0"]
 scale = Vector2(1.21153, 1.44527)
-color = Color(0.483103, 0.112554, 0.154351, 1)
 
 [node name="ColorRect2" parent="pause_menu" index="1"]
 scale = Vector2(1.2213, 1.42363)

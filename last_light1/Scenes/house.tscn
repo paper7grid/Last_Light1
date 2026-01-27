@@ -675,6 +675,9 @@ transform = Transform3D(-0.190673, -0.000864065, 2.0358, 1.40816, 1.4766, 0.1325
 [node name="blood6" parent="bloods" instance=ExtResource("21_78jbw")]
 transform = Transform3D(-0.690896, 0.491903, 1.86052, 1.40816, 1.4766, 0.132515, -1.31171, 1.32609, -0.837703, 11.1086, -14.6847, -24.1228)
 
+[node name="blood7" parent="bloods" instance=ExtResource("21_78jbw")]
+transform = Transform3D(-0.891206, 0, -1.84027, 0, 2.04471, 0, 1.84027, 0, -0.891206, 14.2826, -3.49666, 14.0519)
+
 [node name="Carpets" type="Node3D" parent="."]
 
 [node name="Carpet2" type="MeshInstance3D" parent="Carpets"]
