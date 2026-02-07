@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b68n7aaje14kr"
-path="res://.godot/imported/index.png-4e77bcb1c7e5eb696a6e82a024d230db.ctex"
+path="res://.godot/imported/index.png-9a41c7bc04c7c6bfeed0af1fd9b6b6e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://final/index.png"
-dest_files=["res://.godot/imported/index.png-4e77bcb1c7e5eb696a6e82a024d230db.ctex"]
+source_file="res://final/lastlight1/index.png"
+dest_files=["res://.godot/imported/index.png-9a41c7bc04c7c6bfeed0af1fd9b6b6e6.ctex"]
 
 [params]
 

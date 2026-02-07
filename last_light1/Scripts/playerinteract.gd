@@ -40,7 +40,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				if note_sound:
 					note_sound.play()
-					if player_ui.current_task_id == 2:
+					if player_ui.current_task_id >= 2:
 						player_ui.show_note2()
 						player_ui.advance_task(2, "Search for the second clue")
 					elif player_ui.current_task_id < 2:
@@ -53,7 +53,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				if note_sound:
 					note_sound.play()
-					if player_ui.current_task_id == 3:
+					if player_ui.current_task_id >= 3:
 						player_ui.show_note3() 
 						player_ui.advance_task(3, "Search for the third clue!")
 					elif player_ui.current_task_id < 3:
@@ -66,7 +66,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				if note_sound:
 					note_sound.play()
-					if player_ui.current_task_id == 4:
+					if player_ui.current_task_id >= 4:
 						player_ui.show_note4()
 						player_ui.advance_task(4, "Almost there, follow your gut")
 					elif player_ui.current_task_id < 4:
@@ -78,7 +78,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				if note_sound:
 					note_sound.play()
-					if player_ui.current_task_id == 5:
+					if player_ui.current_task_id >= 5:
 						player_ui.show_note5()
 						player_ui.advance_task(5, "Use the passcode to unclock the door and escape")
 					elif player_ui.current_task_id < 5:
