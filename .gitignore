@@ -1,0 +1,10 @@
+.godot/
+.import/
+*.pck
+*.wasm
+*.exe
+*.app
+*.apk
+*.jpg
+*.wasm
+addons/godot-jolt/
