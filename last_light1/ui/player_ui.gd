@@ -191,7 +191,7 @@ func _process(delta: float) -> void:
 		if time_remaining <= 0:
 			game_over_lose()
 	if time_remaining < 892.0 and !tutorial_shown["pause"]:
-		show_tutorial_message("Press P to pause, E to open drawers/doors. Check Controls for more info", "pause", 5.0)
+		show_tutorial_message("Press P to pause. Check Controls for more information", "pause", 5.0)
 	if Input.is_action_just_pressed("pause") and !$note_open.visible:
 		$pause_menu.visible = !$pause_menu.visible
 		get_tree().paused = $pause_menu.visible
