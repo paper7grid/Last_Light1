@@ -17,3 +17,7 @@ Arrow keys and mouse to look around/ move.
 
 Have fun playing the game!! 
 You can play it at itch.io: https://paper78grid.itch.io/last-light
+
+Credits: 
+Protocontroller: Brackeys
+
