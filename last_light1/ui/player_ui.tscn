@@ -274,9 +274,13 @@ text = "Play Again"
 [node name="pause_menu" parent="." instance=ExtResource("2_vq5xy")]
 
 [node name="ColorRect" parent="pause_menu" index="0"]
+offset_right = 527.0
+offset_bottom = 837.0
 scale = Vector2(1.21153, 1.44527)
 
 [node name="ColorRect2" parent="pause_menu" index="1"]
+offset_right = 509.0
+offset_bottom = 835.0
 scale = Vector2(1.2213, 1.42363)
 
 [node name="RichTextLabel" parent="pause_menu" index="2"]
@@ -290,17 +294,19 @@ scale = Vector2(1.18889, 1.38714)
 
 [node name="settings" parent="pause_menu" index="4"]
 offset_left = 116.0
-offset_top = 389.0
+offset_top = 450.0
 offset_right = 396.0
-offset_bottom = 489.0
+offset_bottom = 550.0
 scale = Vector2(1.18889, 1.38714)
 
 [node name="control" parent="pause_menu" index="5"]
-offset_top = 557.0
-offset_bottom = 657.0
+offset_top = 655.0
+offset_bottom = 755.0
 scale = Vector2(1.18889, 1.38714)
 
 [node name="quitgame" parent="pause_menu" index="6"]
+offset_top = 881.0
+offset_bottom = 981.0
 scale = Vector2(1.18889, 1.38714)
 
 [node name="wrong" type="CanvasLayer" parent="."]
