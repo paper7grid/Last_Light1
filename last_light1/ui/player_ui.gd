@@ -34,7 +34,7 @@ func _ready() -> void:
 	load_settings()
 	
 	$lock_ui.visible = false
-	$taskui/tasktxt.text = "Find and read the mysterious paper"
+	$taskui/tasktxt.text = "Find and read the mysterious paper on the floor"
 	print("Current Task ID: ", current_task_id)
 	update_timer_display()
 	await get_tree().create_timer(2.0).timeout
@@ -191,7 +191,7 @@ func _process(delta: float) -> void:
 		if time_remaining <= 0:
 			game_over_lose()
 	if time_remaining < 892.0 and !tutorial_shown["pause"]:
-		show_tutorial_message("Press P to pause. Check Controls for more info", "pause", 5.0)
+		show_tutorial_message("Press P to pause, E to open drawers/doors. Check Controls for more info", "pause", 5.0)
 	if Input.is_action_just_pressed("pause") and !$note_open.visible:
 		$pause_menu.visible = !$pause_menu.visible
 		get_tree().paused = $pause_menu.visible
@@ -227,4 +227,3 @@ func load_settings():
 	if err == OK:
 		volume = config.get_value("audio", "volume", 0.8)
 		apply_volume()
-		print("volume done.yay.")
